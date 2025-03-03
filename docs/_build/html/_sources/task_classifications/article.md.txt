@@ -6,8 +6,7 @@ Karta Open Evaluations classifies AI evaluation tasks into three levels:  **L1 (
 
 Each task is assessed based on the following parameters:
 
-1. **Tool Use Multiplicity**
-   * Measures how many different tools or APIs the AI agent must interact with.
+1. **Tool Use Multiplicity**Measures how many different tools or APIs the AI agent must interact with.
    * **1 (Low):** Single tool, simple interactions.
    * **5 (High):** Multiple tools requiring coordination and cross-referencing.
 2. **Customer Proficiency**
@@ -37,7 +36,7 @@ Each task is assessed based on the following parameters:
 
 ## Task Classification Based on TLCS
 
-![1741002712940](image/article/1741002712940.png)
+![1741002781586](image/article/1741002781586.png)
 
 The **Task Level Complexity Score (TLCS)** is calculated as the sum of all the parameter scores. Based on the TLCS, tasks are classified into L1, L2, or L3:
 

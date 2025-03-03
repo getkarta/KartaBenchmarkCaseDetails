@@ -1,4 +1,6 @@
 SOP
 ----
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
+
+   ../../sops/ecommerce/delayed_packages.md
