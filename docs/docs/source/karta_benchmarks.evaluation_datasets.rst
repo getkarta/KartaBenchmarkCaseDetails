@@ -7,7 +7,7 @@ Subpackages
 .. toctree::
    :maxdepth: 4
 
-   karta_benchmarks.evaluation_datasets.fintech
+   karta_benchmarks.evaluation_datasets.ecommerce
 
 Module contents
 ---------------

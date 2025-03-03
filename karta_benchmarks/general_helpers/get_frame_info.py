@@ -1,6 +1,6 @@
 import inspect
-
-def get_frame_info(frame: inspect.FrameInfo):
+from typing import Dict, Any
+def get_frame_info(frame: inspect.FrameInfo) -> Dict[str, Any]:
     """
     Get the frame information of the current function.
     """

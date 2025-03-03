@@ -3,21 +3,30 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to the Karta Open Evaluations documentation!
+Welcome to Karta Open Evaluations!
 -----------------------------------------------------
 
+Understand the Basics
+^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
-   :maxdepth: 5
-   :caption: Contents:
+   :maxdepth: 2
+   :caption: Basics:
+
+   howthisworks
+   tasks
+   howtousethispackage
+
+
+   
 
 
 Domain Data
 ^^^^^^^^^^^
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Domains:
 
-   fintech
+   ecommerce
 
 
 Indices and tables
