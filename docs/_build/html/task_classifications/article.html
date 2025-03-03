@@ -227,6 +227,9 @@
 <li class="toctree-l1 has-children"><a class="reference internal" href="../ecommerce.html">E-Commerce</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of E-Commerce</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/data.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Datasets</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/customers.html">Customers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/orders.html">Orders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/payment_methods.html">Payment Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/packages.html">Packages</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/knowledge.html">Knowledge Bases</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -234,12 +237,11 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/tasks.html">Task Descriptions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Task Descriptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../task_descriptions/ecommerce/task1.html">Task Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../task_descriptions/ecommerce/task1.html#steps-for-ai-agent">Steps for AI Agent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../task_descriptions/ecommerce/task1.html#sample-interaction">Sample Interaction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../task_descriptions/ecommerce/task1.html">Task 1: Delayed Headphones</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/sop.html">SOP</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of SOP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/sop.html">SOP</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of SOP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sops/ecommerce/delayed_packages.html">Standard Operating Procedure (SOP): Handling Delayed Packages</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -298,55 +300,61 @@
 <h1>Task Complexity Parameters<a class="headerlink" href="#task-complexity-parameters" title="Link to this heading">¶</a></h1>
 <p>Each task is assessed based on the following parameters:</p>
 <ol class="arabic simple">
-<li><p><strong>Tool Use Multiplicity</strong>Measures how many different tools or APIs the AI agent must interact with.</p>
+<li><p><strong>Tool Use Multiplicity</strong></p></li>
+</ol>
 <ul class="simple">
+<li><p>Measures how many different tools or APIs the AI agent must interact with.</p></li>
 <li><p><strong>1 (Low):</strong> Single tool, simple interactions.</p></li>
 <li><p><strong>5 (High):</strong> Multiple tools requiring coordination and cross-referencing.</p></li>
 </ul>
-</li>
-<li><p><strong>Customer Proficiency</strong></p>
+<ol class="arabic simple" start="2">
+<li><p><strong>Customer Proficiency</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Represents the expertise level of the end user.</p></li>
 <li><p><strong>1 (Low):</strong> Expert users with clear, well-formed queries.</p></li>
 <li><p><strong>5 (High):</strong> Novice users with vague or incomplete input.</p></li>
 </ul>
-</li>
-<li><p><strong>Sub-task Count</strong></p>
+<ol class="arabic simple" start="3">
+<li><p><strong>Sub-task Count</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Evaluates how many distinct steps are needed to complete a task.</p></li>
 <li><p><strong>1 (Low):</strong> Single-step execution.</p></li>
 <li><p><strong>5 (High):</strong> Multi-step processes with dependencies.</p></li>
 </ul>
-</li>
-<li><p><strong>Cost of Failure</strong></p>
+<ol class="arabic simple" start="4">
+<li><p><strong>Cost of Failure</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Assesses the impact of an incorrect response.</p></li>
 <li><p><strong>1 (Low):</strong> Minimal consequence (e.g., minor inconvenience).</p></li>
 <li><p><strong>5 (High):</strong> Severe consequences (e.g., financial loss, compliance issues).</p></li>
 </ul>
-</li>
-<li><p><strong>Conversation Length Potential</strong></p>
+<ol class="arabic simple" start="5">
+<li><p><strong>Conversation Length Potential</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Measures how long an interaction can extend.</p></li>
 <li><p><strong>1 (Low):</strong> Single-turn interactions.</p></li>
 <li><p><strong>5 (High):</strong> Extended multi-turn dialogues requiring memory.</p></li>
 </ul>
-</li>
-<li><p><strong>Domain Knowledge Richness</strong></p>
+<ol class="arabic simple" start="6">
+<li><p><strong>Domain Knowledge Richness</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Evaluates how much specialized knowledge is required.</p></li>
 <li><p><strong>1 (Low):</strong> General knowledge, easily retrievable.</p></li>
 <li><p><strong>5 (High):</strong> Deep, domain-specific knowledge.</p></li>
 </ul>
-</li>
-<li><p><strong>Scope for Alternate Closure</strong></p>
+<ol class="arabic simple" start="7">
+<li><p><strong>Scope for Alternate Closure</strong></p></li>
+</ol>
 <ul class="simple">
 <li><p>Assesses whether the task has multiple valid solutions.</p></li>
 <li><p><strong>1 (Low):</strong> One clear solution.</p></li>
 <li><p><strong>5 (High):</strong> Many valid approaches and possible outcomes.</p></li>
 </ul>
-</li>
-</ol>
 </section>
 <section id="task-classification-based-on-tlcs">
 <h1>Task Classification Based on TLCS<a class="headerlink" href="#task-classification-based-on-tlcs" title="Link to this heading">¶</a></h1>

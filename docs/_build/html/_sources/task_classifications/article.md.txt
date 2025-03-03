@@ -6,33 +6,47 @@ Karta Open Evaluations classifies AI evaluation tasks into three levels:  **L1 (
 
 Each task is assessed based on the following parameters:
 
-1. **Tool Use Multiplicity**Measures how many different tools or APIs the AI agent must interact with.
-   * **1 (Low):** Single tool, simple interactions.
-   * **5 (High):** Multiple tools requiring coordination and cross-referencing.
+1. **Tool Use Multiplicity**
+
+* Measures how many different tools or APIs the AI agent must interact with.
+* **1 (Low):** Single tool, simple interactions.
+* **5 (High):** Multiple tools requiring coordination and cross-referencing.
+
 2. **Customer Proficiency**
-   * Represents the expertise level of the end user.
-   * **1 (Low):** Expert users with clear, well-formed queries.
-   * **5 (High):** Novice users with vague or incomplete input.
+
+* Represents the expertise level of the end user.
+* **1 (Low):** Expert users with clear, well-formed queries.
+* **5 (High):** Novice users with vague or incomplete input.
+
 3. **Sub-task Count**
-   * Evaluates how many distinct steps are needed to complete a task.
-   * **1 (Low):** Single-step execution.
-   * **5 (High):** Multi-step processes with dependencies.
+
+* Evaluates how many distinct steps are needed to complete a task.
+* **1 (Low):** Single-step execution.
+* **5 (High):** Multi-step processes with dependencies.
+
 4. **Cost of Failure**
-   * Assesses the impact of an incorrect response.
-   * **1 (Low):** Minimal consequence (e.g., minor inconvenience).
-   * **5 (High):** Severe consequences (e.g., financial loss, compliance issues).
+
+* Assesses the impact of an incorrect response.
+* **1 (Low):** Minimal consequence (e.g., minor inconvenience).
+* **5 (High):** Severe consequences (e.g., financial loss, compliance issues).
+
 5. **Conversation Length Potential**
-   * Measures how long an interaction can extend.
-   * **1 (Low):** Single-turn interactions.
-   * **5 (High):** Extended multi-turn dialogues requiring memory.
+
+* Measures how long an interaction can extend.
+* **1 (Low):** Single-turn interactions.
+* **5 (High):** Extended multi-turn dialogues requiring memory.
+
 6. **Domain Knowledge Richness**
-   * Evaluates how much specialized knowledge is required.
-   * **1 (Low):** General knowledge, easily retrievable.
-   * **5 (High):** Deep, domain-specific knowledge.
+
+* Evaluates how much specialized knowledge is required.
+* **1 (Low):** General knowledge, easily retrievable.
+* **5 (High):** Deep, domain-specific knowledge.
+
 7. **Scope for Alternate Closure**
-   * Assesses whether the task has multiple valid solutions.
-   * **1 (Low):** One clear solution.
-   * **5 (High):** Many valid approaches and possible outcomes.
+
+* Assesses whether the task has multiple valid solutions.
+* **1 (Low):** One clear solution.
+* **5 (High):** Many valid approaches and possible outcomes.
 
 ## Task Classification Based on TLCS
 
