@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Knowledge Bases" href="../../pages/ecommerce/knowledge.html" /><link rel="prev" title="Payment Methods" href="payment_methods.html" />
 
     <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
-        <title>Packages - Karta Open Evaluations documentation</title>
+        <title>Packages - Karta Context Engine documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
@@ -167,7 +167,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Karta Open Evaluations  documentation</div></a>
+      <a href="../../index.html"><div class="brand">Karta Context Engine  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -194,7 +194,7 @@
     <img class="sidebar-logo" src="../../_static/getkarta.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Karta Open Evaluations  documentation</span>
+  <span class="sidebar-brand-text">Karta Context Engine  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -205,7 +205,8 @@
   <p class="caption" role="heading"><span class="caption-text">Basics:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../howthisworks.html">How This Works</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of How This Works</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html">What this package contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html">What Am I Getting?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#what-this-package-contains">What this package contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#data-origins">Data Origins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#continuous-updates">Continuous Updates</a></li>
 </ul>
@@ -233,7 +234,10 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../pages/ecommerce/knowledge.html">Knowledge Bases</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../knowledge/ecommerce/domain_knowledge.html">General Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../knowledge/ecommerce/domain_knowledge.html">Package Movement Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../knowledge/ecommerce/domain_knowledge.html#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../knowledge/ecommerce/domain_knowledge.html#returns">Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../knowledge/ecommerce/domain_knowledge.html#other-general-rules">Other General Rules</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../pages/ecommerce/tasks.html">Task Descriptions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Task Descriptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -300,7 +304,7 @@
 </section>
 <section id="schema">
 <h2>Schema<a class="headerlink" href="#schema" title="Link to this heading">¶</a></h2>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;$schema&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://json-schema.org/draft-07/schema#&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;patternProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -326,6 +330,11 @@
 <span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Code representing the origin location of the package.&quot;</span>
 <span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nt">&quot;current_status&quot;</span><span class="p">:{</span>
+<span class="w">            </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;AT_WAREHOUSE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;IN_TRANSIT&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;AT_DELIVERY_STATION&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELIVERED&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELIVERY_FAILURE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;RETURN_PICKEDUP&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;RETURN_COMPLETED&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The current status of the package.&quot;</span>
+<span class="w">        </span><span class="p">},</span>
 <span class="w">        </span><span class="nt">&quot;tracking_details&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;object&quot;</span><span class="p">,</span>
 <span class="w">          </span><span class="nt">&quot;patternProperties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
@@ -334,13 +343,13 @@
 <span class="w">              </span><span class="nt">&quot;properties&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                </span><span class="nt">&quot;event&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DESPATCHED&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;RECEIVED&quot;</span><span class="p">],</span>
+<span class="w">                  </span><span class="nt">&quot;enum&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;DESPATCHED&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;RECEIVED&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;DELIVERY FAILED&quot;</span><span class="p">],</span>
 <span class="w">                  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Tracking event type.&quot;</span>
 <span class="w">                </span><span class="p">},</span>
 <span class="w">                </span><span class="nt">&quot;location_code&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
 <span class="w">                  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Code representing the package location.&quot;</span><span class="p">,</span>
-<span class="w">                  </span><span class="nt">&quot;nullable&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">                  </span><span class="nt">&quot;nullable&quot;</span><span class="p">:</span><span class="w"> </span><span class="err">True</span>
 <span class="w">                </span><span class="p">},</span>
 <span class="w">                </span><span class="nt">&quot;location_type&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">                  </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;string&quot;</span><span class="p">,</span>
@@ -354,7 +363,7 @@
 <span class="w">          </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;A timestamp-based mapping of tracking events with their location details.&quot;</span>
 <span class="w">        </span><span class="p">}</span>
 <span class="w">      </span><span class="p">},</span>
-<span class="w">      </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;destination_address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shipper_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;origin_code&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tracking_details&quot;</span><span class="p">]</span>
+<span class="w">      </span><span class="nt">&quot;required&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;destination_address&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;shipper_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;origin_code&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;tracking_details&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;current_status&quot;</span><span class="p">]</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">}</span>
 <span class="p">}</span>

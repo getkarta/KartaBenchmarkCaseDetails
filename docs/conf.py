@@ -24,18 +24,29 @@ for domain in domains:
     # Define the source file location (1 levels up)
     source_file = os.path.abspath(f"../karta_benchmarks/evaluation_datasets/{domain}/knowledge_base/domain_knowledge.md")
     destination_file = os.path.abspath("./knowledge/ecommerce/domain_knowledge.md")
+    # copy over the image/domain_knowledge folder aslso
     # Copy the Markdown file if it exists
     # If the destination folder does not exist, create it
     if not os.path.exists(os.path.dirname(destination_file)):
         os.makedirs(os.path.dirname(destination_file))
     if os.path.exists(source_file):
         shutil.copy(source_file, destination_file)
+    source_folder = os.path.abspath(f"../karta_benchmarks/evaluation_datasets/{domain}/knowledge_base/image")
+    destination_folder = os.path.abspath("./knowledge/ecommerce/image")
+    if not os.path.exists(os.path.dirname(destination_folder)):
+        os.makedirs(os.path.dirname(destination_folder))
+    if os.path.exists(source_folder):
+        # Overwrite the destination folder if it exists
+        if os.path.exists(destination_folder):
+            shutil.rmtree(destination_folder)
+        shutil.copytree(source_folder, destination_folder)
+
 
 
 
 # -- Project information -----------------------------------------------------
 
-project = 'Karta Open Evaluations'
+project = 'Karta Context Engine'
 copyright = '2025, GetKarta.ai'
 author = 'GetKarta.ai'
 html_theme = 'furo'

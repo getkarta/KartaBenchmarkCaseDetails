@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Task Descriptions" href="../../pages/ecommerce/tasks.html" /><link rel="prev" title="Knowledge Bases" href="../../pages/ecommerce/knowledge.html" />
 
     <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
-        <title>General Rules - Karta Open Evaluations documentation</title>
+        <title>Package Movement Stages - Karta Context Engine documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=302659d7" />
@@ -167,7 +167,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="../../index.html"><div class="brand">Karta Open Evaluations  documentation</div></a>
+      <a href="../../index.html"><div class="brand">Karta Context Engine  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -194,7 +194,7 @@
     <img class="sidebar-logo" src="../../_static/getkarta.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Karta Open Evaluations  documentation</span>
+  <span class="sidebar-brand-text">Karta Context Engine  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -205,7 +205,8 @@
   <p class="caption" role="heading"><span class="caption-text">Basics:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../howthisworks.html">How This Works</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of How This Works</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html">What this package contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html">What Am I Getting?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#what-this-package-contains">What this package contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#data-origins">Data Origins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../howthisworks/article.html#continuous-updates">Continuous Updates</a></li>
 </ul>
@@ -233,7 +234,10 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../../pages/ecommerce/knowledge.html">Knowledge Bases</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">General Rules</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Package Movement Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#returns">Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-general-rules">Other General Rules</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../pages/ecommerce/tasks.html">Task Descriptions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Task Descriptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -292,8 +296,90 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="general-rules">
-<h1>General Rules<a class="headerlink" href="#general-rules" title="Link to this heading">¶</a></h1>
+          <section id="package-movement-stages">
+<h1>Package Movement Stages<a class="headerlink" href="#package-movement-stages" title="Link to this heading">¶</a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
+<p>A package moves through several key stages from its origin to its final destination. Each stage is logged in the tracking system using structured <strong>tracking details</strong> , which include timestamped events, location codes, and location types. Understanding these stages helps ensure seamless package tracking and efficient issue resolution.</p>
+</section>
+<section id="stages-of-package-movement">
+<h2><strong>Stages of Package Movement</strong><a class="headerlink" href="#stages-of-package-movement" title="Link to this heading">¶</a></h2>
+</section>
+<section id="at-warehouse-warehouse">
+<h2><strong>1. At Warehouse (WAREHOUSE)</strong><a class="headerlink" href="#at-warehouse-warehouse" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The package is stored in the warehouse after being processed for shipment.</p></li>
+<li><p>This is the first stage in the shipping cycle where the package is packed, labeled, and prepared for dispatch.</p></li>
+<li><p>A <strong>DESPATCHED</strong> event is logged when the package leaves the warehouse.</p></li>
+</ul>
+</section>
+<section id="at-courier-facility-courier-facility">
+<h2><strong>2. At Courier Facility (COURIER FACILITY)</strong><a class="headerlink" href="#at-courier-facility-courier-facility" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The package is received by a courier facility that handles transportation to sorting centers or local hubs.</p></li>
+<li><p>A <strong>RECEIVED</strong> event is recorded upon arrival.</p></li>
+<li><p>The package may be consolidated with others before moving to the next step.</p></li>
+</ul>
+</section>
+<section id="at-sort-center-sort-center">
+<h2><strong>3. At Sort Center (SORT CENTER)</strong><a class="headerlink" href="#at-sort-center-sort-center" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The package reaches a regional or national sorting hub where it is organized based on its final delivery location.</p></li>
+<li><p>This is a critical transit point where packages are rerouted for efficient distribution.</p></li>
+<li><p>A <strong>DESPATCHED</strong> event occurs when the package moves to the next transit location.</p></li>
+</ul>
+</section>
+<section id="at-delivery-station-delivery-station">
+<h2><strong>4. At Delivery Station (DELIVERY STATION)</strong><a class="headerlink" href="#at-delivery-station-delivery-station" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The package is now at the final local distribution center near the recipient.</p></li>
+<li><p>A <strong>RECEIVED</strong> event is logged.</p></li>
+<li><p>The package is prepared for last-mile delivery, where a delivery agent is assigned.</p></li>
+</ul>
+</section>
+<section id="final-destination-final-destination">
+<h2><strong>5. Final Destination (FINAL DESTINATION)</strong><a class="headerlink" href="#final-destination-final-destination" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>The package is delivered to the recipient’s address.</p></li>
+<li><p>A <strong>RECEIVED</strong> event is recorded, marking successful completion of the shipping process.</p></li>
+<li><p>If the package is  <strong>not successfully delivered</strong> , a <strong>DELIVERY FAILURE</strong> event is logged, indicating that the package could not be delivered due to reasons such as:</p>
+<ul>
+<li><p>Incorrect address</p></li>
+<li><p>Customer unavailable</p></li>
+<li><p>Security restrictions</p></li>
+<li><p>Damage during transit</p></li>
+</ul>
+</li>
+</ul>
+<p><img alt="1741021562860" src="../../_images/1741021562860.png" /></p>
+</section>
+</section>
+<section id="tracking-system-and-event-logging">
+<h1><strong>Tracking System and Event Logging</strong><a class="headerlink" href="#tracking-system-and-event-logging" title="Link to this heading">¶</a></h1>
+<p>Each stage of the package’s journey is recorded in  <strong>tracking_details</strong> , which captures:</p>
+<ul class="simple">
+<li><p><strong>Event Type</strong> : Whether the package was <strong>DESPATCHED</strong> or  <strong>RECEIVED</strong> .</p></li>
+<li><p><strong>Location Type</strong> : The type of facility where the event occurred ( <strong>WAREHOUSE, COURIER FACILITY, SORT CENTER, DELIVERY STATION, FINAL DESTINATION</strong> ).</p></li>
+<li><p><strong>Location Code</strong>  <em>(Optional)</em> : A unique identifier for the facility handling the package.</p></li>
+</ul>
+<p>All the information contained in the event logs is condensed into the current state of the package. This can be one of the following:</p>
+<ul class="simple">
+<li><p><strong>AT_WAREHOUSE:</strong> This is the origin of every package. Each package begins its journey from a warehouse.</p></li>
+<li><p><strong>IN_TRANSIT</strong>: Typically the middle leg from the warehouse to the delivery station is considered as IN_TRANSIT.</p></li>
+<li><p><strong>AT_DELIVERY_STATION</strong>: This is the final location before the package reaches the customer. Think of it as the last hub.</p></li>
+<li><p><strong>DELIVERED:</strong> The package has been delivered to the customer.</p></li>
+<li><p><strong>DELIVERY_FAILURE</strong>: The package has failed delivery.</p></li>
+<li><p><strong>OUT_FOR_DELIVERY</strong>: The package is out for delivery.</p></li>
+<li><p><strong>RETURN_PICKEDUP</strong>: The package is being returned by the customer and has been picked up.</p></li>
+<li><p><strong>RETURN_COMPLETED:</strong> The return has been completed.</p></li>
+</ul>
+</section>
+<section id="returns">
+<h1>Returns<a class="headerlink" href="#returns" title="Link to this heading">¶</a></h1>
+<p>Just as packages move on a forward leg to the customer, they can also be returned by the customer. These are called RETURN packages (<code class="docutils literal notranslate"><span class="pre">type=RETURN</span></code>). They follow a slightly different route back to the warehouse. Packages are still RECEIVED and DESPATCHED but in the opposite direction. When the package has been picked up and is in transit to the delivery station its status marked as RETURN_PICKEDUP. When it finally reaches the warehouse its status become RETURN_COMPLETED. Make sure you note the package type and interpret the details accordingly. Return packages are very different from order delivery packages. They are assigned to to an return instead of an order.</p>
+</section>
+<section id="other-general-rules">
+<h1>Other General Rules<a class="headerlink" href="#other-general-rules" title="Link to this heading">¶</a></h1>
 <section id="change-to-customer-information">
 <h2>Change to Customer Information<a class="headerlink" href="#change-to-customer-information" title="Link to this heading">¶</a></h2>
 <p>Customer email and customer phone number cannot be updated. The customer will have to create a new account in case the email needs to be changed.</p>
@@ -359,7 +445,19 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">General Rules</a><ul>
+<li><a class="reference internal" href="#">Package Movement Stages</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#stages-of-package-movement"><strong>Stages of Package Movement</strong></a></li>
+<li><a class="reference internal" href="#at-warehouse-warehouse"><strong>1. At Warehouse (WAREHOUSE)</strong></a></li>
+<li><a class="reference internal" href="#at-courier-facility-courier-facility"><strong>2. At Courier Facility (COURIER FACILITY)</strong></a></li>
+<li><a class="reference internal" href="#at-sort-center-sort-center"><strong>3. At Sort Center (SORT CENTER)</strong></a></li>
+<li><a class="reference internal" href="#at-delivery-station-delivery-station"><strong>4. At Delivery Station (DELIVERY STATION)</strong></a></li>
+<li><a class="reference internal" href="#final-destination-final-destination"><strong>5. Final Destination (FINAL DESTINATION)</strong></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
+<li><a class="reference internal" href="#returns">Returns</a></li>
+<li><a class="reference internal" href="#other-general-rules">Other General Rules</a><ul>
 <li><a class="reference internal" href="#change-to-customer-information">Change to Customer Information</a></li>
 <li><a class="reference internal" href="#fraudulent-customers">Fraudulent Customers</a></li>
 </ul>

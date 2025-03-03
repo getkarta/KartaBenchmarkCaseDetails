@@ -1,3 +1,28 @@
+## What Am I Getting?
+
+The **Karta Context Engine** is built to support different stakeholders in AI evaluation—each with their own priorities and challenges. Whether you're an **engineer** , a **product manager** , or an **operations manager** , here’s what you can expect to gain from integrating the context engine into your workflow.
+
+### For Engineers
+
+* **Easily Importable Datasets** : No need to waste time curating test data. Our structured, domain-specific datasets are ready to use, helping you validate AI performance immediately.
+* **Automated Testing Workflows** : Reduce manual effort with seamless integration into existing CI/CD pipelines and evaluation frameworks.
+* **Fine-Grained Task Control** : Test specific AI capabilities with tailored, well-structured scenarios that closely mimic real-world interactions.
+* **Multi-Metric Evaluation** : Run multiple evaluation metrics to compare different AI models and iterate quickly.
+
+### For Product Managers
+
+* **Realistic Benchmarking** : Ensure AI agents are tested against real-world conditions, reducing unpredictable behavior in production.
+* **Scenario-Driven Validation** : Assess AI performance across carefully designed tasks that reflect actual user interactions in your domain.
+* **Domain Expansion** : Start with e-commerce and scale into other domains as the library expands.
+* **Clear Insights for Decision Making** : Get meaningful metrics that help determine whether an AI model is ready for deployment or requires further improvement.
+
+### For Operations Managers
+
+* **Reduced Downtime and Failures** : Ensure AI agents are thoroughly tested before they go live, preventing costly failures in customer interactions.
+* **Safe AI Implementation** : By using representative task simulations, avoid AI errors that could lead to customer dissatisfaction or operational inefficiencies.
+* **Proactive Issue Detection** : Catch AI weaknesses early by stress-testing with edge cases and diverse datasets.
+* **Scalable Testing for Growing AI Needs** : As AI-powered operations scale, the Karta Scenario Library provides a structured framework to continuously test and improve AI performance.
+
 ## What this package contains
 
 ***Karta Open Evaluations*** is an effort to provide high fidelity, well documented and diverse test cases for AI agents from multiple domains. Building *reliable* agents is hard work. This is an attempt to take the load off developers looking for stable test cases and tools, so that they can focus on fine tuning their agents.

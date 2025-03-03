@@ -7,7 +7,7 @@ The Packages table defines the structure for tracking packages within the system
 ## Schema
 
 ```json
-{
+, ""{
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "patternProperties": {
@@ -33,6 +33,11 @@ The Packages table defines the structure for tracking packages within the system
           "type": "string",
           "description": "Code representing the origin location of the package."
         },
+        "current_status":{
+            "type": "string",
+            "enum": ["AT_WAREHOUSE", "IN_TRANSIT", "AT_DELIVERY_STATION", "DELIVERED", "DELIVERY_FAILURE", "RETURN_PICKEDUP", "RETURN_COMPLETED"],
+            "description": "The current status of the package."
+        },
         "tracking_details": {
           "type": "object",
           "patternProperties": {
@@ -41,13 +46,13 @@ The Packages table defines the structure for tracking packages within the system
               "properties": {
                 "event": {
                   "type": "string",
-                  "enum": ["DESPATCHED", "RECEIVED"],
+                  "enum": ["DESPATCHED", "RECEIVED", "DELIVERY FAILED"],
                   "description": "Tracking event type."
                 },
                 "location_code": {
                   "type": "string",
                   "description": "Code representing the package location.",
-                  "nullable": true
+                  "nullable": True
                 },
                 "location_type": {
                   "type": "string",
@@ -61,7 +66,7 @@ The Packages table defines the structure for tracking packages within the system
           "description": "A timestamp-based mapping of tracking events with their location details."
         }
       },
-      "required": ["destination_address", "shipper_name", "origin_code", "tracking_details"]
+      "required": ["destination_address", "shipper_name", "origin_code", "tracking_details", "current_status"]
     }
   }
 }

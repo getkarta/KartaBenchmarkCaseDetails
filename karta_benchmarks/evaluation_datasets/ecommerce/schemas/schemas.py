@@ -149,7 +149,7 @@ SCHEMAS = {
               "package_id": { "type": "string", "description": "Unique identifier for the package." },
               "current_status": {
                 "type": "string",
-                "enum": ["AT_WAREHOUSE", "IN_TRANSIT", "AT_DELIVERY_STATION", "DELIVERED", "DELIVERY_FAILURE"],
+                "enum": ["AT_WAREHOUSE", "IN_TRANSIT", "AT_DELIVERY_STATION", "DELIVERED", "DELIVERY_FAILURE", "RETURN_PICKEDUP", "RETURN_COMPLETED", "RETURN_SCHEDULED"],
                 "description": "Current tracking status of the package."
               },
               "delivery_estimate": {
@@ -255,6 +255,11 @@ SCHEMAS = {
           "type": "string",
           "description": "Code representing the origin location of the package."
         },
+        "current_status":{
+            "type": "string",
+            "enum": ["AT_WAREHOUSE", "IN_TRANSIT", "AT_DELIVERY_STATION", "DELIVERED", "DELIVERY_FAILURE", "RETURN_PICKEDUP", "RETURN_COMPLETED"],
+            "description": "The current status of the package."
+        },
         "tracking_details": {
           "type": "object",
           "patternProperties": {
@@ -263,7 +268,7 @@ SCHEMAS = {
               "properties": {
                 "event": {
                   "type": "string",
-                  "enum": ["DESPATCHED", "RECEIVED"],
+                  "enum": ["DESPATCHED", "RECEIVED", "DELIVERY FAILED"],
                   "description": "Tracking event type."
                 },
                 "location_code": {
@@ -283,7 +288,7 @@ SCHEMAS = {
           "description": "A timestamp-based mapping of tracking events with their location details."
         }
       },
-      "required": ["destination_address", "shipper_name", "origin_code", "tracking_details"]
+      "required": ["destination_address", "shipper_name", "origin_code", "tracking_details", "current_status"]
     }
   }
 },

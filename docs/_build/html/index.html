@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="How This Works" href="howthisworks.html" />
 
     <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
-        <title>Karta Open Evaluations documentation</title>
+        <title>Karta Context Engine documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
@@ -167,7 +167,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">Karta Open Evaluations  documentation</div></a>
+      <a href="#"><div class="brand">Karta Context Engine  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -194,7 +194,7 @@
     <img class="sidebar-logo" src="_static/getkarta.png" alt="Logo"/>
   </div>
   
-  <span class="sidebar-brand-text">Karta Open Evaluations  documentation</span>
+  <span class="sidebar-brand-text">Karta Context Engine  documentation</span>
   
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
@@ -205,7 +205,8 @@
   <p class="caption" role="heading"><span class="caption-text">Basics:</span></p>
 <ul>
 <li class="toctree-l1 has-children"><a class="reference internal" href="howthisworks.html">How This Works</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of How This Works</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html">What this package contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html">What Am I Getting?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#what-this-package-contains">What this package contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#data-origins">Data Origins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#continuous-updates">Continuous Updates</a></li>
 </ul>
@@ -233,7 +234,10 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="pages/ecommerce/knowledge.html">Knowledge Bases</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="knowledge/ecommerce/domain_knowledge.html">General Rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge/ecommerce/domain_knowledge.html">Package Movement Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge/ecommerce/domain_knowledge.html#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge/ecommerce/domain_knowledge.html#returns">Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="knowledge/ecommerce/domain_knowledge.html#other-general-rules">Other General Rules</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="pages/ecommerce/tasks.html">Task Descriptions</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Task Descriptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -292,21 +296,32 @@
           </label>
         </div>
         <article role="main" id="furo-main-content">
-          <section id="welcome-to-karta-open-evaluations">
-<h1>Welcome to Karta Open Evaluations!<a class="headerlink" href="#welcome-to-karta-open-evaluations" title="Link to this heading">¶</a></h1>
-<p><cite>Karta Open Evaluations</cite> is designed to provide a comprehensive suite of data, tools and knowledge documents
-for testing AI agents across diverse scenarios. It includes structured datasets, predefined test cases,
-tailored for benchmarking agent performance in real-world domains.
-The package allows seamless integration with existing code bases, enabling automated testing workflows and simulations.</p>
+          <section id="welcome-to-the-karta-context-engine">
+<h1>Welcome to the Karta Context Engine<a class="headerlink" href="#welcome-to-the-karta-context-engine" title="Link to this heading">¶</a></h1>
+<p>The journey to building robust AI agents can be challenging. At Karta, we found that existing datasets and evaluation tools for <em>iterating quickly</em> on agent architectures were non-existent.
+Capturing the subtleties and variety during testing is essential in creating a viable AI experience for customers.
+Off-the-shelf benchmarks rarely captured the complexities our agents faced in production, leaving critical gaps in their assessment.</p>
+<p>Determined to bridge this gap, we set out to create <strong>gold standard tasks</strong> coupled with <strong>deeply representative contexts</strong> for Agent evaluation — meticulously designed datasets, well-defined tasks, and comprehensive toolsets tailored to real-world domains.
+We started with <strong>e-commerce</strong>, an industry where we have deep expertise, ensuring our evaluations reflect the nuanced interactions that AI systems encounter in practical deployments.</p>
 <a class="reference internal image-reference" href="_images/flow.png"><img alt="Karta Logo" class="align-center" src="_images/flow.png" style="width: 600px;" />
 </a>
+<p>The result is the <strong>Karta Context Engine</strong> — a comprehensive suite of structured datasets, domain-specific tasks, and knowledge documents crafted to set a new benchmark for AI testing.
+Designed for seamless integration into existing codebases, it empowers teams to automate testing workflows, run sophisticated simulations, and rigorously validate agent performance.
+With the <strong>Karta Context Engine</strong>, AI teams can confidently measure, iterate, and improve, knowing they are testing against some of the most complex and subtle real-world scenarios available.</p>
+<p>Our vision is a state where agent evaluation is <strong>effortless, rigorous, and representative of real-world challenges</strong>.
+Our journey begins with <strong>easily importable datasets</strong> that provide developers with quick access to high-quality test cases.
+From there, we will <strong>expand the breadth of supported domains</strong>, ensuring that AI agents across industries are held to the highest standard.</p>
+<p>The culmination of this effort will be a <strong>fully integrated interface</strong> for running and comparing multiple evaluation metrics, allowing AI teams to benchmark performance with <strong>precision and clarity</strong>.
+We believe that <strong>representative task simulations are the key to a safe AI experience</strong>, helping developers build models that behave predictably in high-stakes environments.
+By pushing the boundaries of AI evaluation, we aim to set the foundation for a future where AI is <strong>trustworthy, adaptable, and aligned with real-world needs</strong>.</p>
 <section id="understand-the-basics">
 <h2>Understand the Basics<a class="headerlink" href="#understand-the-basics" title="Link to this heading">¶</a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Basics:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="howthisworks.html">How This Works</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html">What this package contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html">What Am I Getting?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#what-this-package-contains">What this package contains</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#data-origins">Data Origins</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howthisworks/article.html#continuous-updates">Continuous Updates</a></li>
 </ul>
@@ -392,7 +407,7 @@ The package allows seamless integration with existing code bases, enabling autom
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Welcome to Karta Open Evaluations!</a><ul>
+<li><a class="reference internal" href="#">Welcome to the Karta Context Engine</a><ul>
 <li><a class="reference internal" href="#understand-the-basics">Understand the Basics</a></li>
 <li><a class="reference internal" href="#domain-data">Domain Data</a></li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
