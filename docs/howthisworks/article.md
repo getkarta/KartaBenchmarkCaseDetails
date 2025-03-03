@@ -18,3 +18,11 @@ Each domain is equipped with a set of **artefacts** that developers can integrat
 4. **Tasks:** Handpicked tasks along with expected behavior patterns and classifications into different difficulty levels.
 5. **Evaluators:** A unified evaluation interface that allows agent-user interaction trajectories to be evaluated in a few lines of code.
 6. **Documentation:** Detailed documentation for each dataset, tool and task.
+
+## Data Origins
+
+All data in **Karta Open Evaluations** is entirely synthetic, generated using structured methodologies informed by domain experts. It is designed to capture the complexity of real-world scenarios without relying on proprietary or sensitive information, ensuring both realism and ethical integrity. By leveraging expert-driven knowledge, the dataset enables rigorous, reproducible evaluations while maintaining adaptability for diverse testing needs. This synthetic approach ensures that AI agents are assessed against well-defined benchmarks, promoting fairness, transparency, and robustness in evaluation.
+
+## Continuous Updates
+
+The **Karta** team is committed to continuously expanding and refining the dataset. As new AI agent training methodologies evolve, the team will share the same synthetic datasets used internally to train and evaluate our own models. This ensures that **Karta Open Evaluations** remains relevant, up-to-date, and aligned with the latest advancements in AI testing and benchmarking. By regularly incorporating new datasets, the package empowers researchers and developers with cutting-edge evaluation tools, fostering a collaborative and evolving ecosystem for AI agent assessment.
