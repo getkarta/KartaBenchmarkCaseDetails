@@ -1,4 +1,4 @@
-Packaeg Usage
+Package Usage
 =============
 
 .. toctree::
