@@ -43,8 +43,6 @@ This will internally load the artefacts for the ecommerce domain and make them a
 
 ![](assets/20250304_160059_image.png)
 
-![](assets/20250304_155914_image.png
-
 Tools are categorized into 3 types:
 
 1. **Read Tools** - Tools that are specific to a domain and are used to retrieve data from the database.
