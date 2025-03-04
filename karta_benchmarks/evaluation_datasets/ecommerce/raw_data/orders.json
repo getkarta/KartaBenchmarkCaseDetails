@@ -1,0 +1,32 @@
+{
+    "ORD001998":{
+        "order_id": "ORD001998",
+        "customer_id": "CUST001001",
+        "order_date" : "2024-05-17",
+        "shipping_address": {
+            "address_1": "123 Main St",
+            "address_2": "Apt 4B",
+            "address_3": "Unit 101",
+            "postal_code": "12345",
+            "contact_number": "+91 99999 88888"
+        },
+        "items_ordered": [
+            {
+                "item_number": "ITM001234",
+                "qty": 1,
+                "promised_delivery_date": "2024-05-24",
+                "item_original_cost": 4256.32,
+                "applied_discount": 0.0,
+                "item_final_cost": 4256.32,
+                "package_id": "PACK00789812"
+            }
+        ],
+        "payment_method": [
+            {
+                "payment_method_id": "PM001234",
+                "type": "CREDIT_CARD",
+                "amount_paid": 4256.32
+            }
+        ]
+    }
+}

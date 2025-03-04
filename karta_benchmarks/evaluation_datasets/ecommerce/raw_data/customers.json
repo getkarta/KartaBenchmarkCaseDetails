@@ -1,33 +1,20 @@
 {
     "CUST001001":{
         "customer_id" : "CUST001001",
-        "first_name" : "Abhinav",
-        "last_name" : "Kumar",
-        "email" : "abhinav6671@somemail.com",
+        "is_rewards_and_benfits_member" : false,
+        "first_name" : "Rahul",
+        "last_name" : "Gupta",
+        "email" : "rahulgupta@example.com",
         "phone_number" : "+91 99999 88888",
         "date_of_birth" : "1994-01-01",
         "gender" : "Male",
-        "account_creation_date" : "2024-01-01",
-        "last_order_date" : "2025-02-01",
+        "account_creation_date" : "2023-12-22",
+        "last_order_date" : "2024-05-17",
         "is_active" : true,
         "is_email_verified" : true,
         "is_phone_verified" : true,
-        "is_fraud_flag" : false
-    },
-
-    "CUST002004":{
-        "customer_id" : "CUST002004",
-        "first_name" : "Melco",
-        "last_name" : "John",
-        "email" : "jmmelco@somemail2.com",
-        "phone_number" : "+91 44444 88888",
-        "date_of_birth" : "1999-01-01",
-        "gender" : "Male",
-        "account_creation_date" : "2024-01-01",
-        "last_order_date" : "2024-12-01",
-        "is_active" : true,
-        "is_email_verified" : true,
-        "is_phone_verified" : true,
-        "is_fraud_flag" : true
+        "is_fraud_flag" : false,
+        "active_orders" : ["ORD001998"],
+        "active_returns" : []
     }
 }

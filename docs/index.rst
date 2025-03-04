@@ -33,12 +33,14 @@ By pushing the boundaries of AI evaluation, we aim to set the foundation for a f
 Understand the Basics
 ^^^^^^^^^^^^^^^^^^^^^
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Basics:
 
+   whoisitfor
+   problemspace
    howthisworks
-   tasks
-   howtousethispackage
+   vision
+   developerguide
 
 Domain Data
 ^^^^^^^^^^^

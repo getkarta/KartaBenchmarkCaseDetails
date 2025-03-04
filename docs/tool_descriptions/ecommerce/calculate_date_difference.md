@@ -1,8 +1,10 @@
 # calculate_date_difference()
 
+[![](https://img.shields.io/badge/type-helper-yellow)](https://img.shields.io/badge/type-helper-yellow)
+
 ## Tool Class
 
-This is a **generic** tool and can be used for some general computational requirements by the agent.
+This is a **helper** tool and can be used for some general computational requirements by the agent.
 
 ## Tool Function
 
@@ -19,6 +21,4 @@ days_between_dates = calculate_date_difference(
 	date1='2025-01-01',
 	date2='2025-01-03'
 )
-print(days_between_dates)
-# Will return: 1
 ```

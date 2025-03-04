@@ -2,11 +2,7 @@
 
 ## Scope
 
-This SOP applies to all customer service agents handling cases where an order has not been delivered by the promised date, and the customer is inquiring about its status.
-
----
-
-## Process Flow
+This SOP applies to all customer service agents handling cases where an order has not been delivered by the promised date, and the customer is inquiring about its statusProcess Flow
 
 ### Step 1: Identify the Customer
 
@@ -21,13 +17,15 @@ This SOP applies to all customer service agents handling cases where an order ha
 
 ### Step 3: Communicate the Status to the Customer
 
-* Inform the customer of the latest tracking status.
-* If the package is still marked as "Out for Delivery," acknowledge the delay and apologize for the inconvenience.
+* Inform the customer of the latest tracking status along with an estimated delivery date of the package if applicable.
+* Make sure that you include the package_id in your response.
+* If the promised delivery date of the package has indeed passed then ensure that you apologize to the customer and provide him the estimated delivery date.
+* If the estimated delivery date is in the past and the package has not yet been delivered, tell the customer that you will follow up.
 
-### Step 4: Address Customer Concerns
+### Step 4: Assess Customer Response
 
-* If the customer simply asks for an update, provide the available tracking information.
-* If the customer expresses frustration and insists that the package is important and needed for an occasion, proceed to the resolution step.
+* If the customer expresses frustration and insists that the package is important and needed for an occasion, proceed to offer compensation.
+* If the customer thanks you for the update and doesnot express any frustration or demand any compensation you may end the conversation after checking with the customer whether he/she has anymore queries.
 
 ### Step 5: Offer Compensation (if applicable)
 
@@ -38,12 +36,6 @@ This SOP applies to all customer service agents handling cases where an order ha
 
 * If the customer accepts the gift card, process the issuance and provide confirmation.
 * If the customer remains dissatisfied and requests further action, escalate the case to a human representative.
-
-## Flowchart
-
-Below is a flowchart representation of the delayed package handling process:
-
-![1741004846542](image/delayed_packages/1741004846542.png)
 
 ## Key Guidelines
 

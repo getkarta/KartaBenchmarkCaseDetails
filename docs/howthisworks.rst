@@ -1,5 +1,5 @@
-How This Works
-==============
+The Solution
+============
 
 .. toctree::
    :maxdepth: 2

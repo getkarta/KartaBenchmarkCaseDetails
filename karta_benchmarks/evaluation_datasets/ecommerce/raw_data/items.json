@@ -1,0 +1,78 @@
+{
+    "ITM001234": {
+        "item_description" : "Sound Blaster Head Phones Pro",
+        "item_weight" : 0.2,
+        "item_cost" : 4256.32,
+        "seller_id" : "SELL7786",
+        "restricted_zip_codes" : [],
+        "item_category" : "Electronics",
+        "item_specifications" : [
+            {
+                "property_name" : "Color",
+                "property_value" : "Black"
+            },
+            {
+                "property_name" : "Brand",
+                "property_value" : "Sound Blaster"
+            },
+            {
+                "property_name" : "Connectivity",
+                "property_value" : "Wireless"
+            }
+        ]
+    },
+
+    "ITM001235": {
+        "item_description" : "Mechanical Keyboard X200",
+        "item_weight" : 1.1,
+        "item_cost" : 7899.99,
+        "seller_id" : "SELL1234",
+        "restricted_zip_codes" : [],
+        "item_category" : "Electronics",
+        "item_specifications" : [
+            {
+                "property_name" : "Color",
+                "property_value" : "White"
+            },
+            {
+                "property_name" : "Brand",
+                "property_value" : "KeyMaster"
+            },
+            {
+                "property_name" : "Switch Type",
+                "property_value" : "Mechanical"
+            },
+            {
+                "property_name" : "Connectivity",
+                "property_value" : "Wired"
+            }
+        ]
+    },
+
+    "ITM001236": {
+        "item_description" : "Modern Dining Table Set",
+        "item_weight" : 50.0,
+        "item_cost" : 15999.99,
+        "seller_id" : "SELL5678",
+        "restricted_zip_codes" : ["543221", "987652"],
+        "item_category" : "Home Goods",
+        "item_specifications" : [
+            {
+                "property_name" : "Color",
+                "property_value" : "Brown"
+            },
+            {
+                "property_name" : "Material",
+                "property_value" : "Wood"
+            },
+            {
+                "property_name" : "Seating Capacity",
+                "property_value" : "6"
+            },
+            {
+                "property_name" : "Shape",
+                "property_value" : "Rectangular"
+            }
+        ]
+    }
+}

@@ -1,3 +1,10 @@
+## Be aware of the Time
+
+* Ensure that you know what the current date and time are. You will need to know them accurately so that time senstive queries and time dependent queries can be handled. Use a watch, the clock or a tool to check the current time.
+
+## Approaching a Customer Conversation
+
+* Remember that not all customers will have an order_id or a return_id handy, so if you ask customers for an order id and they donot have it. you have to check the active_orders (in the case of orders) and active_returns (in the case of returns) lists in the customer details. If there are multiple orders and multiple returns, then investigate each one of them till the correct customer order is found. Customers will generally not order ids handy so donot bother them for it again if they have said that they donot have it the first time. The same goes for return_id. It is your responsibility as an agent to figure these details out from the information that the customer has given you.
 
 ## Package Movement Stages
 

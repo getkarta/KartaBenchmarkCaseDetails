@@ -1,0 +1,14 @@
+{
+    "PM0001234": {
+        "customer_id": "CUST001001",
+        "payment_method_type": "CREDIT_CARD",
+        "expiry_date": "2040-03-20",
+        "billing_address": {
+            "address_1": "123 Main St",
+            "address_2": "Apt 4B",
+            "address_3": "Unit 101",
+            "postal_code": "12345"
+        },
+        "identification_number": "XXXX XXXX XXXX 3456"
+    }
+}

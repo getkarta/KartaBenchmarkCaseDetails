@@ -1,0 +1,629 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="E-Commerce" href="../ecommerce.html" /><link rel="prev" title="Developer Guide" href="../developerguide.html" />
+
+    <!-- Generated with Sphinx 8.2.1 and Furo 2024.08.06 -->
+        <title>Understanding the Basics - Karta Context Engine documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=302659d7" />
+    <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=a0e2b9ed" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Karta Context Engine  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/getkarta.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Karta Context Engine  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Basics:</span></p>
+<ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../whoisitfor.html">Who is this for?</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Who is this for?</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../whoisitfor/article.html">Engineers, Product Managers ….</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../problemspace.html">What’s the Problem?</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of What’s the Problem?</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../problemspace/article.html">The Problem Space</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../howthisworks.html">The Solution</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of The Solution</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../howthisworks/article.html">What this package contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howthisworks/article.html#what-do-i-get">What Do I Get?</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../vision.html">Our Vision</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Our Vision</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../vision/article.html">Expanding Across Domains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vision/article.html#weekly-data-drops-evolving-scenarios">Weekly Data Drops &amp; Evolving Scenarios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vision/article.html#a-full-fledged-user-simulator">A Full-Fledged User Simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vision/article.html#the-karta-playground-unified-ai-testing-benchmarking">The Karta Playground: Unified AI Testing &amp; Benchmarking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../vision/article.html#a-future-of-safe-scalable-ai">A Future of Safe &amp; Scalable AI</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../developerguide.html">Developer Guide</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Developer Guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Understanding the Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#artefacts-and-their-functions">Artefacts and their functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initializing-a-context-engine">Initializing a Context Engine</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tool-factory">Tool Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tasks">Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-factory">Data Factory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sops">SOPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#knowledge-base">Knowledge Base</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Domains:</span></p>
+<ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../ecommerce.html">E-Commerce</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of E-Commerce</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/data.html">Datasets</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Datasets</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/customers.html">Customers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/orders.html">Orders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/payment_methods.html">Payment Methods</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../data_descriptions/ecommerce/packages.html">Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/knowledge.html">Knowledge Bases</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html">Be aware of the Time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html#approaching-a-customer-conversation">Approaching a Customer Conversation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html#package-movement-stages">Package Movement Stages</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html#returns">Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../knowledge/ecommerce/domain_knowledge.html#other-general-rules">Other General Rules</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/tasks.html">Task Descriptions</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Task Descriptions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../task_descriptions/ecommerce/task1.html">Task 1: Delayed Headphones</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/sop.html">SOP</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of SOP</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../sops/ecommerce/delayed_packages.html">Standard Operating Procedure (SOP): Handling Delayed Packages</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../pages/ecommerce/tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Tools</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/calculate_date_difference.html">calculate_date_difference()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/get_customer_by_id.html">get_customer_by_id()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/get_customer_by_email.html">get_customer_by_email()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/get_item_details.html">get_item_details()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/get_package_details.html">get_package_details()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/issue_gift_card.html">get_package_details()</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../tool_descriptions/ecommerce/get_current_date_and_time.html">get_current_date_and_time()</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="../_sources/developerguide/article.md.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="understanding-the-basics">
+<h1>Understanding the Basics<a class="headerlink" href="#understanding-the-basics" title="Link to this heading">¶</a></h1>
+<p>The karta context engine provides users with multiple artefacts for each domain what will allow them to test their agents on finely curated datasets on complext tasks.
+There are five artefacts that are provided to users and these can be integrated into their agents. This document will provide a brief overview of the artefacts and how to use them.
+Before diving in here are a few definitions:</p>
+<ol class="arabic simple">
+<li><p>A <strong>task</strong> is a collection of implied instructions for the agent coupled with expected actions and outputs. Instructions are  <em>implied</em> because the agent will have to discover the best way to
+sequence tasks and achieve the desired outcome.</p></li>
+<li><p>A <strong>tool</strong> is a function that can be bound to the agent.</p></li>
+<li><p>A <strong>factory</strong> is a callable function that can be used to generate a fresh set of specific artefacts (more on this later). Users can invoke the factory to get a fresh copy of the artefacts.</p></li>
+<li><p>A <strong>Domain</strong> roughly corresponds to a distinct industry or sector. For example, ecommerce, healthcare, finance etc. We expect that the knowledge base, tools and tasks will be significantly different for across domains.</p></li>
+</ol>
+</section>
+<section id="artefacts-and-their-functions">
+<h1>Artefacts and their functions<a class="headerlink" href="#artefacts-and-their-functions" title="Link to this heading">¶</a></h1>
+<p>The context engine provides users with five artefacts:</p>
+<ol class="arabic simple">
+<li><p><strong>Tasks</strong> - A list of deeply annotated tasks.</p></li>
+<li><p><strong>Data Factory</strong> - A callable that returns the complete dataset for a domain.</p></li>
+<li><p><strong>SOPs</strong> - A dictionary that contains the Standard Operating Procedures (SOPs) for a domain.</p></li>
+<li><p><strong>Knowledge Base</strong> - The complete knowledge base for a domain.</p></li>
+<li><p><strong>Tool Factory</strong> - A callable that returns a list of tools for a domain and a fresh instance of the dataset for the tools to operate on.</p></li>
+</ol>
+</section>
+<section id="initializing-a-context-engine">
+<h1>Initializing a Context Engine<a class="headerlink" href="#initializing-a-context-engine" title="Link to this heading">¶</a></h1>
+<p>Artefacts are vended via a context engine. Taking the example of the ecommerce domain, the context engine for ecommerce would be initialized as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">karta_benchmarks.namespaces.domains</span><span class="w"> </span><span class="kn">import</span> <span class="n">Domains</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">karta_benchmarks.context_engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContextEngine</span>
+
+<span class="c1">## Create the context engine</span>
+<span class="n">context_engine</span> <span class="o">=</span> <span class="n">ContextEngine</span><span class="p">(</span><span class="n">domain</span><span class="o">=</span><span class="n">Domains</span><span class="o">.</span><span class="n">ECOMMERCE</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">======== Created Context Engine for ecommerce ========</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This will internally load the artefacts for the ecommerce domain and make them available to the user.</p>
+</section>
+<section id="tool-factory">
+<h1>Tool Factory<a class="headerlink" href="#tool-factory" title="Link to this heading">¶</a></h1>
+<p><img alt="" src="../_images/20250304_160059_image.png" /></p>
+<p>![](assets/20250304_155914_image.png</p>
+<p>Tools are categorized into 3 types:</p>
+<ol class="arabic simple">
+<li><p><strong>Read Tools</strong> - Tools that are specific to a domain and are used to retrieve data from the database.</p></li>
+<li><p><strong>Update Tools</strong> - Tools that are specific to a domain and are used to update the database. These tools change the state of the database.</p></li>
+<li><p><strong>Helper Tools</strong> - Tools that help the agent in general tasks and are not domain specific.</p></li>
+</ol>
+<p>Tools are made available to the agent via the <code class="docutils literal notranslate"><span class="pre">tool_factory</span></code> artefact.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tool_instance</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;tool_factory&quot;</span><span class="p">]()</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">tool_dictionary</span></code> is a dictionary that contains all the tools for the domain. The keys are the tool names and the values are the tool functions.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">read_tools</span></code> and <code class="docutils literal notranslate"><span class="pre">update_tools</span></code> are lists of read and update tools that are specific to the domain.</p>
+<p>Note that the tool factory returns a fresh set of tools with each call. This means that the tools created by the factory
+will operate on their own instance of the dataset. This helps evaluate the agent repeatedly on the same task with a fresh dataset each time. There are also some generic helper funtions that are useful.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_db_state()</span></code> function returns the current state of the database after tools have acted upon it.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">get_call_history()</span></code> function returns the history of calls made to the tools and their arguments.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">reset_call_history()</span></code> function resets the call history.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">vend_schemas()</span></code> function returns the schemas for the domain. This is useful if the agent needs to know each dataset in detail.</p>
+<p>All tools have docstrings that are brief. The package documentation has more details on each tool.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tool_instance</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;tool_factory&quot;</span><span class="p">]()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">tool_instance</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The above code will print the tool dictionary.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="err">&#39;</span><span class="kc">t</span><span class="err">ool_mappi</span><span class="kc">n</span><span class="err">g&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_db_s</span><span class="kc">tate</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_db_s</span><span class="kc">tateat</span><span class="mi">0</span><span class="err">x</span><span class="mi">10171</span><span class="err">c</span><span class="mi">2</span><span class="err">c</span><span class="mi">0</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_call_his</span><span class="kc">t</span><span class="err">ory&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_call_his</span><span class="kc">t</span><span class="err">orya</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">6</span><span class="err">c</span><span class="mi">0</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;rese</span><span class="kc">t</span><span class="err">_call_his</span><span class="kc">t</span><span class="err">ory&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.rese</span><span class="kc">t</span><span class="err">_call_his</span><span class="kc">t</span><span class="err">orya</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mf">4e0</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;calcula</span><span class="kc">te</span><span class="err">_da</span><span class="kc">te</span><span class="err">_di</span><span class="kc">fferen</span><span class="err">ce&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.calcula</span><span class="kc">te</span><span class="err">_da</span><span class="kc">te</span><span class="err">_di</span><span class="kc">fferen</span><span class="err">cea</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">580</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_ida</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">620</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_email&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_emaila</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">760</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ve</span><span class="kc">n</span><span class="err">d_schemas&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ve</span><span class="kc">n</span><span class="err">d_schemasa</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">101707</span><span class="kc">f</span><span class="mi">60</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_curre</span><span class="kc">nt</span><span class="err">_da</span><span class="kc">te</span><span class="err">_a</span><span class="kc">n</span><span class="err">d_</span><span class="kc">t</span><span class="err">ime&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_curre</span><span class="kc">nt</span><span class="err">_da</span><span class="kc">te</span><span class="err">_a</span><span class="kc">n</span><span class="err">d_</span><span class="kc">t</span><span class="err">imea</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">10171</span><span class="err">c</span><span class="mi">540</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_package_de</span><span class="kc">ta</span><span class="err">ils&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_package_de</span><span class="kc">ta</span><span class="err">ilsa</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">10171</span><span class="err">c</span><span class="mi">220</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;issue_gi</span><span class="kc">ft</span><span class="err">_card&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.issue_gi</span><span class="kc">ft</span><span class="err">_carda</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">440</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_i</span><span class="kc">te</span><span class="err">m_de</span><span class="kc">ta</span><span class="err">ils&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_i</span><span class="kc">te</span><span class="err">m_de</span><span class="kc">ta</span><span class="err">ilsa</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">3</span><span class="err">a</span><span class="mi">0</span><span class="err">&gt;</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="err">&#39;read_</span><span class="kc">t</span><span class="err">ools&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.calcula</span><span class="kc">te</span><span class="err">_da</span><span class="kc">te</span><span class="err">_di</span><span class="kc">fferen</span><span class="err">cea</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">580</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_ida</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">620</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_emaila</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">760</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_curre</span><span class="kc">nt</span><span class="err">_da</span><span class="kc">te</span><span class="err">_a</span><span class="kc">n</span><span class="err">d_</span><span class="kc">t</span><span class="err">imea</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">10171</span><span class="err">c</span><span class="mi">540</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_package_de</span><span class="kc">ta</span><span class="err">ilsa</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">10171</span><span class="err">c</span><span class="mi">220</span><span class="err">&gt;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.ge</span><span class="kc">t</span><span class="err">_i</span><span class="kc">te</span><span class="err">m_de</span><span class="kc">ta</span><span class="err">ilsa</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">3</span><span class="err">a</span><span class="mi">0</span><span class="err">&gt;</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="err">&#39;upda</span><span class="kc">te</span><span class="err">_</span><span class="kc">t</span><span class="err">ools&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="err">&lt;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">nfa</span><span class="err">c</span><span class="kc">t</span><span class="err">ory.&lt;locals&gt;.issue_gi</span><span class="kc">ft</span><span class="err">_carda</span><span class="kc">t</span><span class="mi">0</span><span class="err">x</span><span class="mi">1017</span><span class="err">cd</span><span class="mi">440</span><span class="err">&gt;</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We can now try calling some tools. We will use the tool_mapping to get to the appropriate function. Remember that the lists of <code class="docutils literal notranslate"><span class="pre">read_tools</span></code> and <code class="docutils literal notranslate"><span class="pre">update_tools</span></code> can be used directly and bound to an agent.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tool_instance</span><span class="p">[</span><span class="s2">&quot;tool_mapping&quot;</span><span class="p">][</span><span class="s2">&quot;get_customer_by_id&quot;</span><span class="p">](</span><span class="n">customer_id</span><span class="o">=</span><span class="s2">&quot;CUST001001&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Will return the following:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;customer_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUST001001&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_rewards_and_benfits_member&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;first_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rahul&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_name&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Gupta&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;email&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;rahulgupta@example.com&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;phone_number&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;+91 99999 88888&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;date_of_birth&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1994-01-01&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;gender&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Male&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;account_creation_date&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2023-12-22&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;last_order_date&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2024-05-17&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_active&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_email_verified&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_phone_verified&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;is_fraud_flag&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;active_orders&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ORD001998&quot;</span><span class="p">],</span>
+<span class="w">        </span><span class="nt">&quot;active_returns&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>We can update the state of the database using the <code class="docutils literal notranslate"><span class="pre">issue_gift_card</span></code> tool.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tool_instance</span><span class="p">[</span><span class="s2">&quot;tool_mapping&quot;</span><span class="p">][</span><span class="s2">&quot;issue_gift_card&quot;</span><span class="p">](</span><span class="n">customer_id</span><span class="o">=</span><span class="s2">&quot;CUST001001&quot;</span><span class="p">,</span> <span class="n">amount</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">&lt;success&gt; Gift card GFT000001 issued to customer with ID CUST001001 with amount 100 &lt;/success&gt;</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>This should have updated the database. We can verify this by calling the <code class="docutils literal notranslate"><span class="pre">get_db_state()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get the updated state of the database</span>
+<span class="n">updated_state</span> <span class="o">=</span> <span class="n">tool_instance</span><span class="p">[</span><span class="s2">&quot;tool_mapping&quot;</span><span class="p">][</span><span class="s2">&quot;get_db_state&quot;</span><span class="p">]()</span>
+<span class="c1"># Retrieve payment details for the customer</span>
+<span class="n">payment_details</span> <span class="o">=</span> <span class="n">updated_state</span><span class="p">[</span><span class="s2">&quot;payment_methods&quot;</span><span class="p">][</span><span class="s2">&quot;GFT000001&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>We should see the following:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="err">&#39;issued_a</span><span class="kc">t</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="mi">2024-03-25</span><span class="w"> </span><span class="mi">10</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="err">&#39;cus</span><span class="kc">t</span><span class="err">omer_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;CUST</span><span class="mi">001001</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="err">&#39;payme</span><span class="kc">nt</span><span class="err">_me</span><span class="kc">t</span><span class="err">hod_</span><span class="kc">t</span><span class="err">ype&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;GIFT_CARD&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="err">&#39;amou</span><span class="kc">nt</span><span class="err">_remai</span><span class="kc">n</span><span class="err">i</span><span class="kc">n</span><span class="err">g&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>To get the call history, we can use the <code class="docutils literal notranslate"><span class="pre">get_call_history()</span></code> function.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">call_history</span> <span class="o">=</span> <span class="n">tool_instance</span><span class="p">[</span><span class="s2">&quot;tool_mapping&quot;</span><span class="p">][</span><span class="s2">&quot;get_call_history&quot;</span><span class="p">]()</span>
+</pre></div>
+</div>
+<p>The call history should look as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="err">&#39;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">_</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;ge</span><span class="kc">t</span><span class="err">_cus</span><span class="kc">t</span><span class="err">omer_by_id&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;argume</span><span class="kc">nts</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="err">&#39;cus</span><span class="kc">t</span><span class="err">omer_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;CUST</span><span class="mi">001001</span><span class="err">&#39;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span>
+<span class="w">    </span><span class="err">&#39;</span><span class="kc">fun</span><span class="err">c</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="err">_</span><span class="kc">na</span><span class="err">me&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;issue_gi</span><span class="kc">ft</span><span class="err">_card&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="err">&#39;argume</span><span class="kc">nts</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="err">&#39;cus</span><span class="kc">t</span><span class="err">omer_id&#39;</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;CUST</span><span class="mi">001001</span><span class="err">&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="err">&#39;amou</span><span class="kc">nt</span><span class="err">&#39;</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="tasks">
+<h1>Tasks<a class="headerlink" href="#tasks" title="Link to this heading">¶</a></h1>
+<p>The tasks are a list of deeply annotated tasks that the agent is expected to perform.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tasks</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;tasks&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">tasks</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>The first task should look like this:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;task_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;delayed_headphones_delivery&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;task_classification&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;L1&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;task_parameters&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                </span><span class="nt">&quot;tool_use_multiplicity&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;customer_proficiency&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;sub_task_count&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;cost_of_failure&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;conversation_length_potential&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;domain_knowledge_richness&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">                </span><span class="nt">&quot;scope_for_alternate_closure&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span>
+<span class="w">            </span><span class="p">},</span>
+<span class="w">            </span><span class="nt">&quot;judgement_criteria&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;The agent must first retrieve the customer details using the customer email.</span>
+<span class="s2">                    Then, it must retrieve the item details using the item id.</span>
+<span class="s2">                    Then, it must retrieve the package details using the package id.</span>
+<span class="s2">                    Then having determined that the package is delayed, it must issue a gift card to the customer after apologizing for the delay.</span>
+<span class="s2">                    &quot;&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;task_complexity_score&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;customer_prompt&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;&quot;&quot;Today is the 25th of March 2024. </span>
+<span class="s2">                    You are Rahul Gupta (rahul_gupta@example.com). </span>
+<span class="s2">                    You placed an order for a pair of wireless headphones five days ago. </span>
+<span class="s2">                    The order was supposed to be delivered yesterday, but you have not yet received it. The tracking status still shows ‘In Transit.’ </span>
+<span class="s2">                    You donot have an order id.</span>
+<span class="s2">                    Initially, you are slightly concerned but remain polite. </span>
+<span class="s2">                    You start by simply asking when your order will be delivered. </span>
+<span class="s2">                    If the AI agent provides a vague response like ‘it is on the way’ without specifics, you express mild frustration and ask for an exact delivery estimate. </span>
+<span class="s2">                    If the response is still unhelpful, you escalate, mentioning that you needed the headphones urgently for an upcoming trip and that the delay is causing inconvenience. </span>
+<span class="s2">                    Since the agent does not provide a delivery estimate, it should offer a gift card as compensation. </span>
+<span class="s2">                    If you accept the offer, the issue is resolved. Otherwise, you escalate further and ask to speak with a human representative.</span>
+<span class="s2">                    &quot;&quot;&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;expected_outputs&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Sound Blaster&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;GFT000001&quot;</span><span class="p">],</span>
+<span class="w">            </span><span class="nt">&quot;mandatory_actions&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">                </span><span class="p">{</span>
+<span class="w">                    </span><span class="nt">&quot;tool&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;issue_gift_card&quot;</span><span class="p">,</span>
+<span class="w">                    </span><span class="nt">&quot;arguments&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">                        </span><span class="nt">&quot;customer_id&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;CUST001001&quot;</span><span class="p">,</span>
+<span class="w">                        </span><span class="nt">&quot;amount&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">120</span>
+<span class="w">                    </span><span class="p">}</span>
+<span class="w">                </span><span class="p">}</span>
+<span class="w">            </span><span class="p">]</span>
+<span class="w">        </span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Each task contains the following:</p>
+<ol class="arabic simple">
+<li><p><strong>task_name</strong> - The name of the task.</p></li>
+<li><p><strong>task_classification</strong> - The classification of the task L1, L2 or L3</p></li>
+<li><p><strong>task_parameters</strong> - The parameters of the task based on which the task is scored.</p></li>
+<li><p><strong>judgement_criteria</strong> - The judgement criteria for the task. This can be used to judge the performance using LLMs as judges.</p></li>
+<li><p><strong>expected_outputs</strong> - The expected outputs for the task. These are outputs that the agent must have displayed to the user when performing the task.</p></li>
+<li><p><strong>mandatory_actions</strong> - The mandatory actions for the task. Without performing these actions, the task cannot be considered complete.</p></li>
+<li><p><strong>customer_prompt</strong> - The prompt that is given to user who will be interacting with the agent.</p></li>
+</ol>
+</section>
+<section id="data-factory">
+<h1>Data Factory<a class="headerlink" href="#data-factory" title="Link to this heading">¶</a></h1>
+<p>The data factory is a callable that returns the complete dataset for a domain.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;data_factory&quot;</span><span class="p">]()</span>
+</pre></div>
+</div>
+<p>Each time the data factory is called, it returns a fresh copy of the dataset.</p>
+</section>
+<section id="sops">
+<h1>SOPs<a class="headerlink" href="#sops" title="Link to this heading">¶</a></h1>
+<p>The SOPs are a dictionary that contains the Standard Operating Procedures (SOPs) for a domain. Each SOP name is the key in the return dictionary and the content of the SOP is the value.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sops</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;sops&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sops</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="knowledge-base">
+<h1>Knowledge Base<a class="headerlink" href="#knowledge-base" title="Link to this heading">¶</a></h1>
+<p>The knowledge base is a string that contains the complete knowledge base for a domain as raw text.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">knowledge_base</span> <span class="o">=</span> <span class="n">context_engine</span><span class="o">.</span><span class="n">artifacts</span><span class="p">[</span><span class="s2">&quot;knowledge_base&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">knowledge_base</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../ecommerce.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">E-Commerce</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../developerguide.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Developer Guide</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, GetKarta.ai
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer no-toc">
+      
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
