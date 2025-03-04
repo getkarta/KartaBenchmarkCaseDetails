@@ -74,5 +74,47 @@
                 "property_value" : "Rectangular"
             }
         ]
+    },
+
+    "ITM001237": {
+        "item_description" : "Lenovo ThinkPad Laptop",
+        "item_weight" : 1.4,
+        "item_cost" : 40000.99,
+        "seller_id" : "SELL1234",
+        "restricted_zip_codes" : [],
+        "item_category" : "Electronics - Laptop",
+        "item_specifications" : [
+            {
+                "property_name" : "Color",
+                "property_value" : "Black"
+            },
+            {
+                "property_name" : "Brand",
+                "property_value" : "Lenovo"
+            },
+            {
+                "property_name" : "Processor",
+                "property_value" : "Intel Core i5"
+            },
+            {
+                "property_name" : "RAM",
+                "property_value" : "16GB"
+            }
+        ]
+    },
+
+    "ITM001238": {
+        "item_description": "Robonics Mouse Pad",
+        "item_weight": 0.1,
+        "item_cost": 199.99,
+        "seller_id": "SELL1234",
+        "restricted_zip_codes": [],
+        "item_category": "Electronics - Accessories",
+        "item_specifications": [
+            {
+                "property_name": "Color",
+                "property_value": "Black"
+            }
+        ]
     }
 }

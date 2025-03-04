@@ -120,6 +120,11 @@ SCHEMAS = {
                         "type": "string",
                         "description": "Unique identifier for the customer placing the order."
                     },
+                    "payment_status": {
+                        "type": "string",
+                        "enum": ["SUCCESS", "FAILED", "PENDING"],
+                        "description": "Status of the payment for the order."
+                    },
                     "shipping_address": {
                         "type": "object",
                         "properties": {
@@ -429,6 +434,32 @@ SCHEMAS = {
                     }
                 },
                 "required": ["item_description", "item_weight", "item_cost", "item_category"]
+            }
+        }
+    },
+
+    "contacts" : {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "patternProperties": {
+            "^[a-zA-Z0-9_-]+$": {
+            "type": "object",
+            "properties": {
+                "customer_id": {
+                "type": "string",
+                "description": "Unique identifier for the customer who initiated the contact."
+                },
+                "contact_source": {
+                "type": "string",
+                "enum": ["CHATBOT", "EMAIL", "PHONE", "WEB_FORM"],
+                "description": "The source through which the contact was initiated before being transferred to a human representative."
+                },
+                "summary" : {
+                    "type": "string",
+                    "description": "A summary of the issues raised by the customer."
+                }
+            },
+            "required": ["customer_id", "contact_source", "summary"]
             }
         }
     }

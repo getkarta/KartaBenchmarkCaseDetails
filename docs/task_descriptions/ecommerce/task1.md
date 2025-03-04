@@ -1,6 +1,6 @@
 # Task 1: Delayed Headphones
 
-[![](https://img.shields.io/badge/Task%20Classification-L1-blue)](https://img.shields.io/badge/Task%20Classification-L1-blue)
+[![](https://img.shields.io/badge/Task%20Classification-L2-blue)](https://img.shields.io/badge/Task%20Classification-L2-blue)
 
 *Tasks are written as an instruction to a simulated customer*
 

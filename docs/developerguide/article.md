@@ -74,7 +74,7 @@ All tools have docstrings that are brief. The package documentation has more det
 
 ```python
 tool_instance = context_engine.artifacts["tool_factory"]()
-
+tool_instance["tool_mapping"]["summarize_orders"](["ORD001998"])
 print(tool_instance)
 ```
 

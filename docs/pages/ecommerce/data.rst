@@ -8,3 +8,4 @@ Datasets
    ../../data_descriptions/ecommerce/payment_methods
    ../../data_descriptions/ecommerce/packages
    ../../data_descriptions/ecommerce/items
+   ../../data_descriptions/ecommerce/contacts

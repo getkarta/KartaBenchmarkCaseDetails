@@ -48,7 +48,18 @@ class TestEcommerceFunctionFactory(unittest.TestCase):
     def test_issue_gift_card_failure_customer_not_found(self):
         callable = self.function_instance["tool_mapping"]["issue_gift_card"]
         result = callable("CUST0010011", 100)
-        self.assertEqual(result, f"<error> Customer with ID CUST0010011 not found </error>")    
+        self.assertEqual(result, f"<error> Customer with ID CUST0010011 not found </error>")  
+
+    def test_transfer_to_human_representative_success(self):
+        callable = self.function_instance["tool_mapping"]["transfer_to_human_representative"]
+        result = callable("CUST001001", "The customer is having trouble with their order.")
+        self.assertEqual(result, f"<success> Transferred the call to a human representative </success>")
+        # get a copy of the data
+        mutated_data = self.function_instance["tool_mapping"]["get_db_state"]()
+        self.assertEqual(mutated_data["contacts"]["CNTCT000001"]["customer_id"], "CUST001001")
+        self.assertEqual(mutated_data["contacts"]["CNTCT000001"]["contact_source"], "CHATBOT")
+        self.assertEqual(mutated_data["contacts"]["CNTCT000001"]["summary"], "summary")
         
+
 if __name__ == '__main__':
     unittest.main() 

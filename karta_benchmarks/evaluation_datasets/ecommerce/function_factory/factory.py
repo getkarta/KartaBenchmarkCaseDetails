@@ -23,6 +23,25 @@ def factory() -> Dict[str, Any]:
             - update_tools: All the update tools
     """
     data = data_factory()
+
+    def transfer_to_human_representative(customer_id: str, summary_of_issues: str) -> str:
+        """
+        Transfer the call to a human representative.
+
+        Args:
+            customer_id (str): The ID of the customer
+            summary_of_issues (str): A string containing the summary of the issues
+
+        Returns:
+            str: A success message if the call is transferred successfully, otherwise an error message is returned
+        """
+        CALL_HISTORY.append(get_frame_info(inspect.currentframe()))
+        DATA["contacts"]["CNTCT000001"] = {
+            "customer_id": customer_id,
+            "contact_source": "CHATBOT",
+            "summary": "summary"
+        }
+        return f"<success> Transferred the call to a human representative </success>"
     
     # Creating a copy of the data
     DATA = copy.deepcopy(data)
@@ -194,7 +213,67 @@ def factory() -> Dict[str, Any]:
         if item_id not in DATA["items"]:
             return f"<error> Item with ID {item_id} not found </error>"
         return DATA["items"][item_id]
+    
+    def get_order_details(order_id: str) -> Dict[str, Any]:
+        """
+        Get the details of an order by its associated order id.
         
+        Args:
+            order_id (str): The ID of the order
+
+        Returns:
+            Dict[str, Any]: A dictionary containing the order details.
+            If the order_id is not found, an error message is returned.
+            The order details contains the order_date, customer_id, payment_status, shipping_address, 
+            items_ordered, payment_method.
+        """
+        CALL_HISTORY.append(get_frame_info(inspect.currentframe()))
+        if order_id not in DATA["orders"]:
+            return f"<error> Order with ID {order_id} not found </error>"
+        return DATA["orders"][order_id]
+    
+    def summarize_orders(order_ids: List[str]) -> Dict[str, Any]:
+        """
+        Summarize the details of multiple orders.
+
+        Args:
+            order_ids (List[str]): The IDs of the orders to summarize
+
+        Returns:
+            Dict[str, Any]: A dictionary containing the summarized order details.
+            The summarized order details contains the order_id as the key and for each order_id, the order_date,
+            and items_ordered (containing the item_id, description, quantity and current shipment status of each item).
+            If an order_id is not found, the value of the order_id key is the error message.
+        """
+        CALL_HISTORY.append(get_frame_info(inspect.currentframe()))
+        summarized_orders = {}
+        for order_id in order_ids:
+            order_details = get_order_details(order_id)
+            if "<error>" in order_details:
+                summarized_orders[order_id] = order_details
+                continue
+            # Get all the items in the order
+            append_dict = {}
+            append_dict["order_date"] = order_details["order_date"]
+            append_dict["items_ordered"] = []
+            for item in order_details["items_ordered"]:
+                item_id = item["item_number"]
+                description = get_item_details(item_id)["item_description"]
+                quantity = item["qty"]
+                package_id = item["package_id"]
+                if package_id != "":
+                    package_details = get_package_details(package_id)
+                    package_status = package_details["current_status"]
+                else:
+                    package_status = "NOT_YET_SHIPPED"
+                append_dict["items_ordered"].append({
+                    "item_id": item_id,
+                    "description": description,
+                    "quantity": quantity,
+                    "current_shipment_status": package_status
+                })
+            summarized_orders[order_id] = append_dict
+        return summarized_orders
         
 
     return {
@@ -209,15 +288,20 @@ def factory() -> Dict[str, Any]:
             "get_current_date_and_time": get_current_date_and_time,
             "get_package_details": get_package_details,
             "issue_gift_card": issue_gift_card,
-            "get_item_details": get_item_details
+            "get_item_details": get_item_details,
+            "get_order_details": get_order_details,
+            "summarize_orders": summarize_orders,
+            "transfer_to_human_representative": transfer_to_human_representative
         },
         "read_tools": [calculate_date_difference, 
                        get_customer_by_id, 
                        get_customer_by_email,
                        get_current_date_and_time,
                        get_package_details,
-                       get_item_details],
-        "update_tools": [issue_gift_card]
+                       get_item_details,
+                       get_order_details,
+                       summarize_orders,
+                       transfer_to_human_representative],
+        "update_tools": [issue_gift_card,
+                         transfer_to_human_representative]
     } 
-    
-    

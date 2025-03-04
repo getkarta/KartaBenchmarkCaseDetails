@@ -8,7 +8,7 @@ class TestSopLoading(unittest.TestCase):
         # The sops() call must return a dictionary with the key as the file name (minus the extension)
         # and the value as the SOP content
         sop_dict = sops()
-        self.assertEqual(len(sop_dict), 1)
+        self.assertEqual(len(sop_dict), 2)
         self.assertIn("delayed_packages", [*sop_dict.keys()])
 
 if __name__ == "__main__":

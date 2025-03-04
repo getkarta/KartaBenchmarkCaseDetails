@@ -1,6 +1,6 @@
 ## Overview
 
-Karta Open Evaluations classifies AI evaluation tasks into three levels:  **L1 (Basic), L2 (Intermediate), and L3 (Advanced)** . These classifications are determined using a  **Task Level Complexity Score (TLCS)** , which is the sum of scores assigned to various complexity parameters. Each parameter is rated on a scale from  **1 to 5** , and the final TLCS determines the classification of the task.
+Karta Context Engine classifies AI evaluation tasks into three levels:  **L1 (Basic), L2 (Intermediate), and L3 (Advanced)** . These classifications are determined using a  **Task Level Complexity Score (TLCS)** , which is the sum of scores assigned to various complexity parameters. Each parameter is rated on a scale from  **1 to 5** , and the final TLCS determines the classification of the task.
 
 ## Task Complexity Parameters
 
@@ -66,4 +66,4 @@ The **Task Level Complexity Score (TLCS)** is calculated as the sum of all the p
 * **L2 tasks** introduce  multi-step reasoning ,  moderate ambiguity , and  tool coordination .
 * **L3 tasks** require  deep contextual understanding ,  multi-turn conversations ,  high-stakes decision-making , and  extensive tool integration .
 
-By utilizing this structured classification system, **Karta Open Evaluations** ensures that AI evaluation tasks are systematically categorized based on complexity, enabling more precise benchmarking and validation of AI agents.
+By utilizing this structured classification system, **Karta Context Engine** ensures that AI evaluation tasks are systematically categorized based on complexity, enabling more precise benchmarking and validation of AI agents.

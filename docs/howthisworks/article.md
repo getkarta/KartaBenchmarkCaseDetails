@@ -1,6 +1,6 @@
 ## What this package contains
 
-***Karta Open Evaluations*** is an effort to provide high fidelity, well documented and diverse test cases for AI agents from multiple domains. Building *reliable* agents is hard work. This is an attempt to take the load off developers looking for stable test cases and tools, so that they can focus on fine tuning their agents.
+***Karta Context Engine*** is an effort to provide high fidelity, well documented and diverse test cases for AI agents from multiple domains. Building *reliable* agents is hard work. This is an attempt to take the load off developers looking for stable test cases and tools, so that they can focus on fine tuning their agents.
 
 ![1740981154244](image/article/1740981154244.png)
 
@@ -21,11 +21,11 @@ Each domain is equipped with a set of **artefacts** that developers can integrat
 
 ### Data Origins
 
-All data in **Karta Open Evaluations** is entirely synthetic, generated using structured methodologies informed by domain experts. It is designed to capture the complexity of real-world scenarios without relying on proprietary or sensitive information, ensuring both realism and ethical integrity. By leveraging expert-driven knowledge, the dataset enables rigorous, reproducible evaluations while maintaining adaptability for diverse testing needs. This synthetic approach ensures that AI agents are assessed against well-defined benchmarks, promoting fairness, transparency, and robustness in evaluation.
+All data in **Karta Context Engine** is entirely synthetic, generated using structured methodologies informed by domain experts. It is designed to capture the complexity of real-world scenarios without relying on proprietary or sensitive information, ensuring both realism and ethical integrity. By leveraging expert-driven knowledge, the dataset enables rigorous, reproducible evaluations while maintaining adaptability for diverse testing needs. This synthetic approach ensures that AI agents are assessed against well-defined benchmarks, promoting fairness, transparency, and robustness in evaluation.
 
 ### Continuous Updates
 
-The **Karta** team is committed to continuously expanding and refining the dataset. As new AI agent training methodologies evolve, the team will share the same synthetic datasets used internally to train and evaluate our own models. This ensures that **Karta Open Evaluations** remains relevant, up-to-date, and aligned with the latest advancements in AI testing and benchmarking. By regularly incorporating new datasets, the package empowers researchers and developers with cutting-edge evaluation tools, fostering a collaborative and evolving ecosystem for AI agent assessment.
+The **Karta** team is committed to continuously expanding and refining the dataset. As new AI agent training methodologies evolve, the team will share the same synthetic datasets used internally to train and evaluate our own models. This ensures that **Karta Context Engine** remains relevant, up-to-date, and aligned with the latest advancements in AI testing and benchmarking. By regularly incorporating new datasets, the package empowers researchers and developers with cutting-edge evaluation tools, fostering a collaborative and evolving ecosystem for AI agent assessment.
 
 ## What Do I Get?
 

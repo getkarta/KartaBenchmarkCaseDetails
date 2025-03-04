@@ -1,4 +1,4 @@
-# Standard Operating Procedure (SOP): Handling Delayed Packages
+# Handling Delayed Packages
 
 ## Scope
 

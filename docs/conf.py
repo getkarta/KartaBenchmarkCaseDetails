@@ -31,6 +31,7 @@ for domain in domains:
         os.makedirs(os.path.dirname(destination_file))
     if os.path.exists(source_file):
         shutil.copy(source_file, destination_file)
+    # Copy the image folder
     source_folder = os.path.abspath(f"../karta_benchmarks/evaluation_datasets/{domain}/knowledge_base/image")
     destination_folder = os.path.abspath("./knowledge/ecommerce/image")
     if not os.path.exists(os.path.dirname(destination_folder)):

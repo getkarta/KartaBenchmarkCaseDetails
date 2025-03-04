@@ -16,5 +16,24 @@
         "is_fraud_flag" : false,
         "active_orders" : ["ORD001998"],
         "active_returns" : []
+    },
+
+    "CUST0001004": {
+        "customer_id" : "CUST001004",
+        "is_rewards_and_benfits_member" : true,
+        "first_name" : "Riddhima",
+        "last_name" : "Khan",
+        "email" : "riddhi@example.com",
+        "phone_number" : "+91 99991 88888",
+        "date_of_birth" : "1990-03-01",
+        "gender" : "Female",
+        "account_creation_date" : "2022-01-21",
+        "last_order_date" : "2024-05-23",
+        "is_active" : true,
+        "is_email_verified" : true,
+        "is_phone_verified" : true,
+        "is_fraud_flag" : false,
+        "active_orders" : ["ORD202405231", "ORD202405232"],
+        "active_returns" : []
     }
 }

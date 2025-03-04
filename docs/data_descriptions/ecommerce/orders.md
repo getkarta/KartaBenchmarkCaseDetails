@@ -8,7 +8,7 @@ The **Order Table Schema** defines the structure of order records within the sys
 * **Shipping Address** : A nested object that captures the shipping address details, including `address_1`, `address_2`, `address_3`, `pin_code`, and `contact_number`.
 * **Items Ordered** : A list of items in the order, where each item includes an `item_number` and `qty` (quantity ordered).
 * **Payment Method** : A list of payment methods used for the order. Each payment entry consists of a `payment_method_id`, `type` (which can be `CREDIT_CARD`, `COD`, or `GIFT_CARD`), and `amount_paid`.
-
+* **Payment Status** : The status of the payment for the order can be one of `SUCCESS`, `FAILED`, or `PENDING`.
 ## Schema
 
 ```json
@@ -31,6 +31,11 @@ The **Order Table Schema** defines the structure of order records within the sys
                     "customer_id": {
                         "type": "string",
                         "description": "Unique identifier for the customer placing the order."
+                    },
+                    "payment_status": {
+                        "type": "string",
+                        "enum": ["SUCCESS", "FAILED", "PENDING"],
+                        "description": "Status of the payment for the order."
                     },
                     "shipping_address": {
                         "type": "object",

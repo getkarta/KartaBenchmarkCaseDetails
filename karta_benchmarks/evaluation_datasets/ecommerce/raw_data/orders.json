@@ -10,6 +10,7 @@
             "postal_code": "12345",
             "contact_number": "+91 99999 88888"
         },
+        "payment_status": "SUCCESS",
         "items_ordered": [
             {
                 "item_number": "ITM001234",
@@ -26,6 +27,70 @@
                 "payment_method_id": "PM001234",
                 "type": "CREDIT_CARD",
                 "amount_paid": 4256.32
+            }
+        ]
+    },
+
+    "ORD202405231": {
+        "order_id": "ORD202405231",
+        "customer_id": "CUST001004",
+        "order_date" : "2024-05-23",
+        "shipping_address": {
+            "address_1": "123 Main St",
+            "address_2": "Apt 5B",
+            "address_3": "Unit 109",
+            "postal_code": "77612",
+            "contact_number": "+91 99991 88888"
+        },
+        "payment_status": "FAILED",
+        "items_ordered": [
+            {
+                "item_number": "ITM001237",
+                "qty": 1,
+                "promised_delivery_date": "2024-05-30",
+                "item_original_cost": 40000.99,
+                "applied_discount": 0.0,
+                "item_final_cost": 40000.99,
+                "package_id": ""
+            }
+        ],
+        "payment_method": [
+            {
+                "payment_method_id": "PM001237",
+                "type": "CREDIT_CARD",
+                "amount_paid": 40000.99
+            }
+        ]
+    },
+
+    "ORD202405232": {
+        "order_id": "ORD202405232",
+        "customer_id": "CUST001004",
+        "order_date" : "2024-05-23",
+        "shipping_address": {
+            "address_1": "123 Main St",
+            "address_2": "Apt 5B",
+            "address_3": "Unit 109",
+            "postal_code": "77612",
+            "contact_number": "+91 99991 88888"
+        },
+        "payment_status": "SUCCESS",
+        "items_ordered": [
+            {
+                "item_number": "ITM001238",
+                "qty": 1,
+                "promised_delivery_date": "2024-05-28",
+                "item_original_cost": 199.99,
+                "applied_discount": 0.0,
+                "item_final_cost": 199.99,
+                "package_id": ""
+            }
+        ],
+        "payment_method": [
+            {
+                "payment_method_id": "PM001238",
+                "type": "CREDIT_CARD",
+                "amount_paid": 199.99
             }
         ]
     }

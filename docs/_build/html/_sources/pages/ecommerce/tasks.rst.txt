@@ -4,4 +4,5 @@ Task Descriptions
    :maxdepth: 2
 
    ../../task_descriptions/ecommerce/task1.md
+   ../../task_descriptions/ecommerce/task2.md
    
