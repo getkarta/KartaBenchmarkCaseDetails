@@ -3,13 +3,14 @@ import importlib
 import pkgutil
 import inspect
 
+
 def collect_tasks(prefix="task_"):
     """
     Dynamically loads all tasks matching a given prefix from the caller's package.
-    
+
     Args:
         prefix (str): The prefix of the module names to load (default: "task_").
-    
+
     Returns:
         list: A list of dictionaries extracted from the discovered modules. Each task module will have only one dictionary
             for better organization of the task files.
@@ -20,7 +21,7 @@ def collect_tasks(prefix="task_"):
     caller_frame = inspect.stack()[1]
     caller_module = inspect.getmodule(caller_frame[0])
 
-    if not caller_module or not hasattr(caller_module, '__package__'):
+    if not caller_module or not hasattr(caller_module, "__package__"):
         raise RuntimeError("Unable to determine the caller package.")
 
     package_name = caller_module.__package__
