@@ -1,8 +1,8 @@
-## Overview
+## Task Classifications
 
 Karta Context Engine classifies AI evaluation tasks into three levels:  **L1 (Basic), L2 (Intermediate), and L3 (Advanced)** . These classifications are determined using a  **Task Level Complexity Score (TLCS)** , which is the sum of scores assigned to various complexity parameters. Each parameter is rated on a scale from  **1 to 5** , and the final TLCS determines the classification of the task.
 
-## Task Complexity Parameters
+### Task Complexity Parameters
 
 Each task is assessed based on the following parameters:
 
@@ -48,7 +48,7 @@ Each task is assessed based on the following parameters:
 * **1 (Low):** One clear solution.
 * **5 (High):** Many valid approaches and possible outcomes.
 
-## Task Classification Based on TLCS
+### Task Classification Based on TLCS
 
 ![1741002781586](image/article/1741002781586.png)
 
@@ -60,7 +60,7 @@ The **Task Level Complexity Score (TLCS)** is calculated as the sum of all the p
 | **L2 (Intermediate Tasks)** | **15 - 25** | Moderately complex tasks requiring multiple subtasks, some ambiguity handling, and interaction with multiple tools. Cost of failure is moderate, and conversations may be multi-turn.                           |
 | **L3 (Advanced Tasks)**     | **26 - 35** | Highly complex tasks demanding advanced reasoning, multi-tool integration, deep domain expertise, and extended interactions. Failure consequences can be severe, and tasks may have multiple valid resolutions. |
 
-## Summing Up
+### Summing Up
 
 * **L1 tasks** are simple and well-defined, often involving single-turn interactions and  low-risk decision-making .
 * **L2 tasks** introduce  multi-step reasoning ,  moderate ambiguity , and  tool coordination .

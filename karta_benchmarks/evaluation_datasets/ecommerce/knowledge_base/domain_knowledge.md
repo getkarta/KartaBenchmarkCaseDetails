@@ -6,6 +6,31 @@
 
 * Remember that not all customers will have an order_id or a return_id handy, so if you ask customers for an order id and they donot have it. you have to check the active_orders (in the case of orders) and active_returns (in the case of returns) lists in the customer details. If there are multiple orders and multiple returns, then investigate each one of them till the correct customer order is found. Customers will generally not order ids handy so donot bother them for it again if they have said that they donot have it the first time. The same goes for return_id. It is your responsibility as an agent to figure these details out from the information that the customer has given you.
 
+## Understanding Returns
+
+* Returns are a part of the order process. Customers sometimes want to return items for a variety of reasons.
+* The return process progresses through multiple stages. First, the the customer requests a return and depending on the criteria being met (refer to the appropriate SOP), the return is INITATED.
+* After this, the return is APPROVED. This is usually some bake time to allow the customer to change their mind.
+* After approval, the state of the return goes to IN_TRANSIT. This is when package details are assigned for the return.
+* After the package is RECEIVED at the warehouse, the return can be REJECTED because of the following reasons:
+  * The item is not in the condition to be returned.
+  * The item is absent from the return package.
+  * The quantity received is less than the quantity recoreded in the return request.
+* If the return is not REJECTED then the return goes into REFUND_INITIATED state.
+* After 5-7 business days the return is COMPLETED after the refunded amount is credited to the original payment method of the customer.
+
+## Stages of a Refund in case of a Return
+
+* A refund for a return can only begin when the return with which it is associated is in the REFUND_INITIATED state.
+* Till such time, the refund will show not started.
+* When the refund is started, it will go into the PROCESSING stage.
+* After this in 5-7 business days, it should go into the REFUND_COMPLETED state once the amount has been sent to the original payment method.
+* The clock for refunds starts from the processing_start_date in the `refund_details` proprty of the return.
+
+
+
+![Returns Process](image/domain_knowledge/returns_process.png)
+
 ## Package Movement Stages
 
 ### Overview
@@ -29,7 +54,7 @@ A package moves through several key stages from its origin to its final destinat
 ### **3. At Sort Center (SORT CENTER)**
 
 * The package reaches a regional or national sorting hub where it is organized based on its final delivery location.
-* This is a critical transit point where packages are rerouted for efficient distribution.
+* This is a critical transit pqoint where packages are rerouted for efficient distribution.
 * A **DESPATCHED** event occurs when the package moves to the next transit location.
 
 ### **4. At Delivery Station (DELIVERY STATION)**

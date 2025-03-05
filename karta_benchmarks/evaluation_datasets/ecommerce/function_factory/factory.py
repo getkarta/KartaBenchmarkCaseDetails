@@ -206,7 +206,9 @@ def factory() -> Dict[str, Any]:
 
         Returns:
             Dict[str, Any]: A dictionary containing the item details.
-            The item details contains the item_id, item_name, item_description, item_weight, item_cost, item_category.
+            The item details contains the item_id, item_name, item_description, 
+            item_weight, item_cost, item_category. The return eligibility of 
+            each item is also provided.
             If the item_id is not found, an error message is returned
         """
         CALL_HISTORY.append(get_frame_info(inspect.currentframe()))

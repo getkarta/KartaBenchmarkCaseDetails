@@ -234,6 +234,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../developerguide/article.html#data-factory">Data Factory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../developerguide/article.html#sops">SOPs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../developerguide/article.html#knowledge-base">Knowledge Base</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../task_classifications/article.html">Task Classifications</a></li>
 </ul>
 </li>
 </ul>
@@ -247,11 +248,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../data_descriptions/ecommerce/packages.html">Packages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_descriptions/ecommerce/items.html">Items</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../data_descriptions/ecommerce/contacts.html">Contacts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../data_descriptions/ecommerce/returns.html">Returns</a></li>
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../../pages/ecommerce/knowledge.html">Knowledge Bases</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Knowledge Bases</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Be aware of the Time</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#approaching-a-customer-conversation">Approaching a Customer Conversation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-returns">Understanding Returns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stages-of-a-refund-in-case-of-a-return">Stages of a Refund in case of a Return</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#package-movement-stages">Package Movement Stages</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#tracking-system-and-event-logging"><strong>Tracking System and Event Logging</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#returns">Returns</a></li>
@@ -335,6 +339,35 @@
 <li><p>Remember that not all customers will have an order_id or a return_id handy, so if you ask customers for an order id and they donot have it. you have to check the active_orders (in the case of orders) and active_returns (in the case of returns) lists in the customer details. If there are multiple orders and multiple returns, then investigate each one of them till the correct customer order is found. Customers will generally not order ids handy so donot bother them for it again if they have said that they donot have it the first time. The same goes for return_id. It is your responsibility as an agent to figure these details out from the information that the customer has given you.</p></li>
 </ul>
 </section>
+<section id="understanding-returns">
+<h1>Understanding Returns<a class="headerlink" href="#understanding-returns" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Returns are a part of the order process. Customers sometimes want to return items for a variety of reasons.</p></li>
+<li><p>The return process progresses through multiple stages. First, the the customer requests a return and depending on the criteria being met (refer to the appropriate SOP), the return is INITATED.</p></li>
+<li><p>After this, the return is APPROVED. This is usually some bake time to allow the customer to change their mind.</p></li>
+<li><p>After approval, the state of the return goes to IN_TRANSIT. This is when package details are assigned for the return.</p></li>
+<li><p>After the package is RECEIVED at the warehouse, the return can be REJECTED because of the following reasons:</p>
+<ul>
+<li><p>The item is not in the condition to be returned.</p></li>
+<li><p>The item is absent from the return package.</p></li>
+<li><p>The quantity received is less than the quantity recoreded in the return request.</p></li>
+</ul>
+</li>
+<li><p>If the return is not REJECTED then the return goes into REFUND_INITIATED state.</p></li>
+<li><p>After 5-7 business days the return is COMPLETED after the refunded amount is credited to the original payment method of the customer.</p></li>
+</ul>
+</section>
+<section id="stages-of-a-refund-in-case-of-a-return">
+<h1>Stages of a Refund in case of a Return<a class="headerlink" href="#stages-of-a-refund-in-case-of-a-return" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>A refund for a return can only begin when the return with which it is associated is in the REFUND_INITIATED state.</p></li>
+<li><p>Till such time, the refund will show not started.</p></li>
+<li><p>When the refund is started, it will go into the PROCESSING stage.</p></li>
+<li><p>After this in 5-7 business days, it should go into the REFUND_COMPLETED state once the amount has been sent to the original payment method.</p></li>
+<li><p>The clock for refunds starts from the processing_start_date in the <code class="docutils literal notranslate"><span class="pre">refund_details</span></code> proprty of the return.</p></li>
+</ul>
+<p><img alt="Returns Process" src="../../_images/returns_process.png" /></p>
+</section>
 <section id="package-movement-stages">
 <h1>Package Movement Stages<a class="headerlink" href="#package-movement-stages" title="Link to this heading">¶</a></h1>
 <section id="overview">
@@ -364,7 +397,7 @@
 <h2><strong>3. At Sort Center (SORT CENTER)</strong><a class="headerlink" href="#at-sort-center-sort-center" title="Link to this heading">¶</a></h2>
 <ul class="simple">
 <li><p>The package reaches a regional or national sorting hub where it is organized based on its final delivery location.</p></li>
-<li><p>This is a critical transit point where packages are rerouted for efficient distribution.</p></li>
+<li><p>This is a critical transit pqoint where packages are rerouted for efficient distribution.</p></li>
 <li><p>A <strong>DESPATCHED</strong> event occurs when the package moves to the next transit location.</p></li>
 </ul>
 </section>

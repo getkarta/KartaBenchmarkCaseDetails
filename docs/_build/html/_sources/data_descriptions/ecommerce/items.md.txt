@@ -3,6 +3,7 @@
 ## Overview
 
 The **Items Table** provides a structured dataset for cataloging products. Each entry in the table is uniquely identified by an **item_id**, allowing precise tracking and referencing of individual products.
+The items table also contains the return eligibility details for the item.
 
 ## Schema
 
@@ -21,6 +22,19 @@ The **Items Table** provides a structured dataset for cataloging products. Each 
                     "item_description": {
                         "type": "string",
                         "description": "Detailed description of the item."
+                    },
+                    "return_eligiblity_details": {
+                        "type": "object",
+                        "properties": {
+                            "return_eligible": {
+                                "type": "boolean",
+                                "description": "Indicates if the item is eligible for return."
+                            },
+                            "return_window": {
+                                "type": "string",
+                                "description": "The window within which the item can be returned."
+                            }
+                        }
                     },
                     "item_weight": {
                         "type": "number",
