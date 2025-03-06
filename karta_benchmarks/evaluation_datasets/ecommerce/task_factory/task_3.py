@@ -37,6 +37,19 @@ TASK = {
         on why the refund is delayed. The agent must apologize and say that while refunds usually take 5-7 days, there seems to 
         have been a delay in this case. The customer will press for a resolution and ask to be transferred to a human.
         
-        The agent must comply and transfer the call to a human representative.
+        The agent must comply and transfer the call to a human representative. Under no circumstance should a gift card 
+        be offered as a resolution in this case. This is the responsibility and discretion of humans.
     """,
+    "expected_outputs": [
+        "Xbox"
+    ],  # The Xbox gaming console being returned should be presented to the customer.
+    "mandatory_actions": [
+        {
+            "tool": "transfer_to_human_representative",
+            "arguments": {
+                "customer_id": "CUST0001005",
+                "summary_of_issues": "The refund for the order is being processed and it has already been 10 days since the refund process started.",
+            },
+        }
+    ],
 }

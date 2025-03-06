@@ -45,7 +45,6 @@ is the warehouse from which the package is being shipped.
 * The clock for refunds starts from the processing_start_date in the `refund_details` proprty of the return.
 
 
-
 ![Returns Process](image/domain_knowledge/returns_process.png)
 
 ## Package Movement Stages
@@ -115,7 +114,7 @@ All the information contained in the event logs is condensed into the current st
 
 Just as packages move on a forward leg to the customer, they can also be returned by the customer. These are called RETURN packages (`type=RETURN`). They follow a slightly different route back to the warehouse. Packages are still RECEIVED and DESPATCHED but in the opposite direction. When the package has been picked up and is in transit to the delivery station its status marked as RETURN_PICKEDUP. When it finally reaches the warehouse its status become RETURN_COMPLETED. Make sure you note the package type and interpret the details accordingly. Return packages are very different from order delivery packages. They are assigned to to an return instead of an order.
 
-Customers who are contacting you about the status of existing returns will not know their return_id generally. So, you will have to use the `active_returns` field in the customer details to find the return_id. If there are multiple returns then ask the customer from the list of items in each return, which can be obtained using the `summarize_returns` tool.
+Customers who are contacting you about the status of existing returns will not know their return_id generally. So, you will have to use the `active_returns` field in the customer details to find the return_id. If there are multiple returns then ask the customer from the list of items in each return, which can be obtained using the `summarize_returns` tool. Each returned item will also have a `package_id` which can be used to find the package details using the `get_package_details` tool.
 
 ## Other General Rules
 
