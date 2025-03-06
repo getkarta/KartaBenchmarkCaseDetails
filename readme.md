@@ -31,6 +31,13 @@ knowledge_base = context_engine.artifacts["knowledge_base"]
 ```
 Use these in your agent testing workflow. For more details see below.
 
+## Task Library Statistics 
+
+| Domain     | L1 Tasks | L2 Tasks | L3 Tasks | Total Tasks |
+|------------|----------|----------|----------|-------------|
+| Ecommerce  | 1        | 1        | 1        | 3           |
+
+
 ## Welcome to the Karta Context Engine
 
 The journey to building robust AI agents can be challenging. At Karta, we found that existing datasets and evaluation tools for *iterating quickly* on agent architectures were non-existent.
