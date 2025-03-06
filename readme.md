@@ -4,7 +4,34 @@
 
 ---
 
-#### Welcome to the Karta Context Engine
+## Quick start
+Install the package using pip
+```bash
+pip install karta-benchmarks
+```
+
+Import the context engine and the domains namespace
+```python
+from karta_benchmarks.context_engine import ContextEngine
+from karta_benchmarks.namespaces.domains import Domains
+```
+
+Initialize the context engine for a specific domain
+```python
+context_engine = ContextEngine(domain=Domains.ECOMMERCE)
+```
+
+Get the artefacts for the domain
+```python
+tools = context_engine.artifacts["tool_factory"]()
+tasks = context_engine.artifacts["tasks"]
+data = context_engine.artifacts["data_factory"]()
+sops = context_engine.artifacts["sops"]
+knowledge_base = context_engine.artifacts["knowledge_base"]
+```
+Use these in your agent testing workflow. For more details see below.
+
+## Welcome to the Karta Context Engine
 
 The journey to building robust AI agents can be challenging. At Karta, we found that existing datasets and evaluation tools for *iterating quickly* on agent architectures were non-existent.
 Capturing the subtleties and variety during testing is essential in creating a viable AI experience for customers.
@@ -108,7 +135,7 @@ print(tool_instance)
 
 The above code will print the tool dictionary.
 
-```json
+```python
 {
   'tool_mapping': {
     'get_db_state': <functionfactory.<locals>.get_db_stateat0x10171c2c0>,
