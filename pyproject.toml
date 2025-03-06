@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "karta_benchmarks"
-version = "0.0.1"
+version = "0.0.2"
 description = "The Karta Context Engine"
 authors = [
     { name="Karta", email="signup@karta.ai" }
