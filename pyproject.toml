@@ -4,3 +4,11 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "karta_benchmarks"
+version = "0.0.1"
+description = "The Karta Context Engine"
+authors = [
+    { name="Karta", email="signup@karta.ai" }
+]
+readme = "README.md"
+requires-python = ">=3.8"
+
