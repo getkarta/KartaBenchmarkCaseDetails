@@ -11,7 +11,7 @@ TASK = {
         "scope_for_alternate_closure": 1,
     },
     "task_complexity_score": 10,
-    "customer_prompt": """Today is the 25th of March 2024. 
+    "customer_prompt": """Today is the 25th of May 2024. 
 
             You are Riddhima (riddhi@example.com). You have placed two orders yesterday. 
             One of the orders has an expensive Lenovo laptop. You paid for the order using your credit card, but the order has not

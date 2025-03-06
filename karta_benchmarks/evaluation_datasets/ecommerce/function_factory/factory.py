@@ -71,12 +71,12 @@ def factory() -> Dict[str, Any]:
 
     def get_current_date_and_time() -> str:
         """
-        Get the current date and time. IMPORTANT: This is set to "2024-03-25 10:00:00" for all runs.
+        Get the current date and time. IMPORTANT: This is set to "2024-05-25 10:00:00" for all runs.
 
         Returns:
-            str: The current date and time. This is set to "2024-03-25 10:00:00" for all runs.
+            str: The current date and time. This is set to "2024-05-25 10:00:00" for all runs.
         """
-        return "2024-03-25 10:00:00"
+        return "2024-05-25 10:00:00"
 
     def get_package_details(package_id: str) -> Dict[str, Any]:
         """
@@ -239,6 +239,46 @@ def factory() -> Dict[str, Any]:
             return f"<error> Order with ID {order_id} not found </error>"
         return DATA["orders"][order_id]
 
+    def summarize_returns(return_ids: List[str]) -> Dict[str, Any]:
+        """
+        Summarizes the details of multiple returns.
+
+        Args:
+            return_ids (List[str]): The IDs of the returns to summarize
+
+        Returns:
+            Dict[str, Any]: A dictionary containing the summarized return details.
+            The summarized return details contains the return_id as the key and for each return_id, the return_date,
+            return_reason, return_status, and a list of items returned.
+            If a return_id is not found, the value of the return_id key is the error message.
+        """
+        CALL_HISTORY.append(get_frame_info(inspect.currentframe()))
+        summarized_returns = {}
+        for return_id in return_ids:
+            return_details = get_return_details(return_id)
+            if "<error>" in return_details:
+                summarized_returns[return_id] = return_details
+                continue
+            append_dict = {}
+            append_dict["order_id"] = return_details["order_id"]
+            append_dict["return_reason"] = return_details["return_reason"]
+            append_dict["items_returned"] = []
+            for item in return_details["items_returned"]:
+                item_id = item["item_number"]
+                description = get_item_details(item_id)["item_description"]
+                quantity = item["qty"]
+                refundable_amount = item["refundable_amount"]
+                append_dict["items_returned"].append(
+                    {
+                        "item_id": item_id,
+                        "description": description,
+                        "quantity": quantity,
+                        "refundable_amount": refundable_amount,
+                    }
+                )
+            summarized_returns[return_id] = append_dict
+        return summarized_returns
+
     def summarize_orders(order_ids: List[str]) -> Dict[str, Any]:
         """
         Summarize the details of multiple orders.
@@ -319,6 +359,7 @@ def factory() -> Dict[str, Any]:
             "get_order_details": get_order_details,
             "summarize_orders": summarize_orders,
             "transfer_to_human_representative": transfer_to_human_representative,
+            "summarize_returns": summarize_returns,
             "get_return_details": get_return_details,
         },
         "read_tools": [
@@ -332,6 +373,7 @@ def factory() -> Dict[str, Any]:
             summarize_orders,
             transfer_to_human_representative,
             get_return_details,
+            summarize_returns,
         ],
         "update_tools": [issue_gift_card, transfer_to_human_representative],
     }

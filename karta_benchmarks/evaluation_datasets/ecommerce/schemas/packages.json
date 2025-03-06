@@ -29,11 +29,18 @@
                             "description": "Phone number for delivery contact."
                         }
                     },
-                    "required": ["address_1", "postal_code", "contact_number"]
+                    "required": [
+                        "address_1",
+                        "postal_code",
+                        "contact_number"
+                    ]
                 },
                 "type": {
                     "type": "string",
-                    "enum": ["ORDER_DELIVERY", "RETURN"],
+                    "enum": [
+                        "ORDER_DELIVERY",
+                        "RETURN"
+                    ],
                     "description": "Specifies whether this package is for order delivery or return."
                 },
                 "shipper_name": {
@@ -47,8 +54,15 @@
                 "current_status": {
                     "type": "string",
                     "enum": [
-                        "AT_WAREHOUSE", "IN_TRANSIT", "AT_DELIVERY_STATION", "OUT_FOR_DELIVERY", "DELIVERED", "DELIVERY_FAILURE", "RETURN_PICKEDUP",
-                        "RETURN_COMPLETED", "RETURN_INITIATED"
+                        "AT_WAREHOUSE",
+                        "IN_TRANSIT",
+                        "AT_DELIVERY_STATION",
+                        "OUT_FOR_DELIVERY",
+                        "DELIVERED",
+                        "DELIVERY_FAILURE",
+                        "RETURN_PICKEDUP",
+                        "RETURN_COMPLETED",
+                        "RETURN_INITIATED"
                     ],
                     "description": "The current status of the package."
                 },
@@ -56,6 +70,25 @@
                     "type": "string",
                     "format": "date-time",
                     "description": "Estimated delivery date and time of the package."
+                },
+                "final_delivery_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Final delivery date and time of the package."
+                },
+                "final_return_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Final return date and time of the package."
+                },
+                "pickup_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Pickup date and time of the package."
+                },
+                "shipment_cost": {
+                    "type": "number",
+                    "description": "Cost of the shipment."
                 },
                 "tracking_details": {
                     "type": "object",
@@ -65,7 +98,12 @@
                             "properties": {
                                 "event": {
                                     "type": "string",
-                                    "enum": ["DESPATCHED", "RECEIVED", "DELIVERY FAILED"],
+                                    "enum": [
+                                        "DESPATCHED",
+                                        "RECEIVED",
+                                        "PICKED UP",
+                                        "DELIVERY FAILED"
+                                    ],
                                     "description": "Tracking event type."
                                 },
                                 "location_code": {
@@ -75,17 +113,32 @@
                                 },
                                 "location_type": {
                                     "type": "string",
-                                    "enum": ["WAREHOUSE", "COURIER FACILITY", "SORT CENTER", "DELIVERY STATION", "FINAL DESTINATION"],
+                                    "enum": [
+                                        "WAREHOUSE",
+                                        "COURIER FACILITY",
+                                        "SORT CENTER",
+                                        "DELIVERY STATION",
+                                        "FINAL DESTINATION"
+                                    ],
                                     "description": "Type of location where the event occurred."
                                 }
                             },
-                            "required": ["event", "location_type"]
+                            "required": [
+                                "event",
+                                "location_type"
+                            ]
                         }
                     },
                     "description": "A timestamp-based mapping of tracking events with their location details."
                 }
             },
-            "required": ["destination_address", "shipper_name", "origin_code", "tracking_details", "current_status"]
+            "required": [
+                "destination_address",
+                "shipper_name",
+                "origin_code",
+                "tracking_details",
+                "current_status"
+            ]
         }
     }
 }

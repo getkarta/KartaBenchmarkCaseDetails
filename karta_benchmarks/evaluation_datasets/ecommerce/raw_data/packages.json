@@ -7,8 +7,12 @@
             "postal_code": "12345",
             "contact_number": "+91 99999 88888"
         },
+        "type": "ORDER_DELIVERY",
         "shipper_name": "FastCargo",
         "estimated_delivery_date": "2024-05-27 10:00:00",
+        "final_delivery_date": "",
+        "final_return_date": "",
+        "pickup_date": "",
         "shipment_cost": 120,
         "origin_code": "DEL",
         "current_status": "IN_TRANSIT",
@@ -22,9 +26,71 @@
                 "location_type": "COURIER FACILITY"
             },
             "2024-05-22 17:00:00": {
-                    "event": "DESPATCHED",
+                "event": "DESPATCHED",
                 "location_type": "COURIER FACILITY"
             }
         }
-}
+    },
+    "PACKFAST0001294": {
+        "destination_address": {
+            "address_1": "190 Elm St",
+            "address_2": "",
+            "address_3": "",
+            "postal_code": "90040",
+            "contact_number": "+91 92573 88888"
+        },
+        "type": "ORDER_DELIVERY",
+        "shipper_name": "FastCargo",
+        "estimated_delivery_date": "2024-05-11",
+        "final_delivery_date": "2024-05-11",
+        "shipment_cost": 0,
+        "origin_code": "DEL",
+        "current_status": "DELIVERED",
+        "tracking_details": {
+            "2024-05-10 10:00:00": {
+                "event": "DESPATCHED",
+                "location_type": "WAREHOUSE"
+            },
+            "2024-05-10 17:00:00": {
+                "event": "RECEIVED",
+                "location_type": "DELIVERY STATION"
+            },
+            "2024-05-11 06:00:00": {
+                "event": "DESPATCHED",
+                "location_type": "DELIVERY STATION"
+            },
+            "2024-05-11 17:00:00": {
+                "event": "DELIVERED",
+                "location_type": "FINAL DESTINATION"
+            }
+        }
+    },
+    "PACKRET20240513": {
+        "destination_address": {
+            "address_1": "190 Elm St",
+            "address_2": "",
+            "address_3": "",
+            "postal_code": "90040",
+            "contact_number": "+91 92573 88888"
+        },
+        "type": "RETURN",
+        "shipper_name": "AdvancedLogistics",
+        "estimated_delivery_date": "",
+        "final_delivery_date": "",
+        "final_return_date": "2024-05-15",
+        "pickup_date": "2024-05-13",
+        "shipment_cost": 0,
+        "origin_code": "MAA",
+        "current_status": "RETURN_COMPLETED",
+        "tracking_details": {
+            "2024-05-13 10:00:00": {
+                "event": "PICKED UP",
+                "location_code": "FINAL DESTINATION"
+            },
+            "2024-05-15 10:00:00": {
+                "event": "RECEIVED",
+                "location_code": "WAREHOUSE"
+            }
+        }
+    }
 }

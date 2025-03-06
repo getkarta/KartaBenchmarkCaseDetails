@@ -1,39 +1,63 @@
 {
-    "CUST001001":{
-        "customer_id" : "CUST001001",
-        "is_rewards_and_benfits_member" : false,
-        "first_name" : "Rahul",
-        "last_name" : "Gupta",
-        "email" : "rahulgupta@example.com",
-        "phone_number" : "+91 99999 88888",
-        "date_of_birth" : "1994-01-01",
-        "gender" : "Male",
-        "account_creation_date" : "2023-12-22",
-        "last_order_date" : "2024-05-17",
-        "is_active" : true,
-        "is_email_verified" : true,
-        "is_phone_verified" : true,
-        "is_fraud_flag" : false,
-        "active_orders" : ["ORD001998"],
-        "active_returns" : []
+    "CUST001001": {
+        "customer_id": "CUST0001001",
+        "is_rewards_and_benfits_member": false,
+        "first_name": "Rahul",
+        "last_name": "Gupta",
+        "email": "rahulgupta@example.com",
+        "phone_number": "+91 99999 88888",
+        "date_of_birth": "1994-01-01",
+        "gender": "Male",
+        "account_creation_date": "2023-12-22",
+        "last_order_date": "2024-05-17",
+        "is_active": true,
+        "is_email_verified": true,
+        "is_phone_verified": true,
+        "is_fraud_flag": false,
+        "active_orders": [
+            "ORD001998"
+        ],
+        "active_returns": []
     },
-
     "CUST0001004": {
-        "customer_id" : "CUST001004",
-        "is_rewards_and_benfits_member" : true,
-        "first_name" : "Riddhima",
-        "last_name" : "Khan",
-        "email" : "riddhi@example.com",
-        "phone_number" : "+91 99991 88888",
-        "date_of_birth" : "1990-03-01",
-        "gender" : "Female",
-        "account_creation_date" : "2022-01-21",
-        "last_order_date" : "2024-05-23",
-        "is_active" : true,
-        "is_email_verified" : true,
-        "is_phone_verified" : true,
-        "is_fraud_flag" : false,
-        "active_orders" : ["ORD202405231", "ORD202405232"],
-        "active_returns" : []
+        "customer_id": "CUST0001004",
+        "is_rewards_and_benfits_member": true,
+        "first_name": "Riddhima",
+        "last_name": "Khan",
+        "email": "riddhi@example.com",
+        "phone_number": "+91 99991 88888",
+        "date_of_birth": "1990-03-01",
+        "gender": "Female",
+        "account_creation_date": "2022-01-21",
+        "last_order_date": "2024-05-23",
+        "is_active": true,
+        "is_email_verified": true,
+        "is_phone_verified": true,
+        "is_fraud_flag": false,
+        "active_orders": [
+            "ORD202405231",
+            "ORD202405232"
+        ],
+        "active_returns": []
+    },
+    "CUST0001005": {
+        "customer_id": "CUST0001005",
+        "is_rewards_and_benfits_member": true,
+        "first_name": "Priya",
+        "last_name": "Sen",
+        "email": "psen@example.com",
+        "phone_number": "+91 92573 88888",
+        "date_of_birth": "1983-04-07",
+        "gender": "Female",
+        "account_creation_date": "2020-01-11",
+        "last_order_date": "2024-05-10",
+        "is_active": true,
+        "is_email_verified": true,
+        "is_phone_verified": true,
+        "is_fraud_flag": false,
+        "active_orders": [],
+        "active_returns": [
+            "RET20240513"
+        ]
     }
 }

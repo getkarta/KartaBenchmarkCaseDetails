@@ -13,3 +13,5 @@ Tools
    ../../tool_descriptions/ecommerce/get_order_details
    ../../tool_descriptions/ecommerce/summarize_orders
    ../../tool_descriptions/ecommerce/transfer_to_human_representative
+   ../../tool_descriptions/ecommerce/summarize_returns
+   ../../tool_descriptions/ecommerce/get_return_details

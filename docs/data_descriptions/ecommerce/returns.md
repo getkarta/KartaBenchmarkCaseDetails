@@ -7,7 +7,7 @@ Returns are a part of the order process. Customers sometimes want to return item
 ## Schema
 
 ```json
-{
+{{
     "$schema": "http://json-schema.org/draft-07/schema#",
     "type": "object",
     "patternProperties": {
@@ -44,7 +44,7 @@ Returns are a part of the order process. Customers sometimes want to return item
                         "IN_TRANSIT",
                         "RECEIVED",
                         "APPROVED",
-                        "REFUND_INITATED",
+                        "REFUND_INITIATED",
                         "COMPLETED",
                         "REJECTED"
                     ],

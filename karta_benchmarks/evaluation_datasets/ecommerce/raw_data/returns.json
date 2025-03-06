@@ -1,0 +1,50 @@
+{
+    "RET20240513": {
+        "return_id": "RET20240513",
+        "order_id": "ORDPS0004567",
+        "customer_id": "CUST0001005",
+        "return_date": "2024-05-12",
+        "return_status": "REFUND_INITIATED",
+        "return_reason": "DEFECTIVE",
+        "event_history": [
+            {
+                "event": "RETURN_INITIATED",
+                "date": "2024-05-12 18:00:00"
+            },
+            {
+                "event": "APPROVED",
+                "date": "2024-05-12 18:15:00"
+            },
+            {
+                "event": "IN_TRANSIT",
+                "date": "2024-05-12 18:30:00"
+            },
+            {
+                "event": "RECEIVED",
+                "date": "2024-05-15 10:00:00"
+            },
+            {
+                "event": "REFUND_INITIATED",
+                "date": "2024-05-15 12:00:00"
+            }
+        ],
+        "refund_details": {
+            "total_refund_amount": 65000.00,
+            "refund_status": "PROCESSING",
+            "processing_start_date": "2024-05-15 12:00:00",
+            "payment_method": {
+                "payment_method_id": "PMPS0098712",
+                "type": "CREDIT_CARD",
+                "amount_refunded": 65000.00
+            }
+        },
+        "items_returned": [
+            {
+                "item_number": "ITM001296",
+                "qty": 1,
+                "refundable_amount": 65000.00,
+                "package_id": "PACKRET20240513"
+            }
+        ]
+    }
+}

@@ -35,7 +35,7 @@
                         "IN_TRANSIT",
                         "RECEIVED",
                         "APPROVED",
-                        "REFUND_INITATED",
+                        "REFUND_INITIATED",
                         "COMPLETED",
                         "REJECTED"
                     ],

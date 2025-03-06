@@ -16,7 +16,7 @@ TASK = {
                     Then having determined that the package is delayed, it must issue a gift card to the customer after apologizing for the delay.
                     """,
     "task_complexity_score": 21,
-    "customer_prompt": """Today is the 25th of March 2024. 
+    "customer_prompt": """Today is the 25th of May 2024. 
                     You are Rahul Gupta (rahul_gupta@example.com). 
                     You placed an order for a pair of wireless headphones five days ago. 
                     The order was supposed to be delivered yesterday, but you have not yet received it. The tracking status still shows ‘In Transit.’ 

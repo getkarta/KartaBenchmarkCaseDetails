@@ -1,8 +1,8 @@
 {
-    "ORD001998":{
+    "ORD001998": {
         "order_id": "ORD001998",
         "customer_id": "CUST001001",
-        "order_date" : "2024-05-17",
+        "order_date": "2024-05-17",
         "shipping_address": {
             "address_1": "123 Main St",
             "address_2": "Apt 4B",
@@ -28,13 +28,13 @@
                 "type": "CREDIT_CARD",
                 "amount_paid": 4256.32
             }
-        ]
+        ],
+        "associated_returns": []
     },
-
     "ORD202405231": {
         "order_id": "ORD202405231",
         "customer_id": "CUST001004",
-        "order_date" : "2024-05-23",
+        "order_date": "2024-05-23",
         "shipping_address": {
             "address_1": "123 Main St",
             "address_2": "Apt 5B",
@@ -56,17 +56,17 @@
         ],
         "payment_method": [
             {
-                "payment_method_id": "PM001237",
+                "payment_method_id": "PM0001237",
                 "type": "CREDIT_CARD",
                 "amount_paid": 40000.99
             }
-        ]
+        ],
+        "associated_returns": []
     },
-
     "ORD202405232": {
         "order_id": "ORD202405232",
         "customer_id": "CUST001004",
-        "order_date" : "2024-05-23",
+        "order_date": "2024-05-23",
         "shipping_address": {
             "address_1": "123 Main St",
             "address_2": "Apt 5B",
@@ -92,6 +92,41 @@
                 "type": "CREDIT_CARD",
                 "amount_paid": 199.99
             }
+        ],
+        "associated_returns": []
+    },
+    "ORDPS0004567": {
+        "order_id": "ORDPS0004567",
+        "customer_id": "CUST0001005",
+        "order_date": "2024-05-10",
+        "shipping_address": {
+            "address_1": "190 Elm St",
+            "address_2": "",
+            "address_3": "",
+            "postal_code": "90040",
+            "contact_number": "+91 92573 88888"
+        },
+        "payment_status": "SUCCESS",
+        "items_ordered": [
+            {
+                "item_number": "ITM001296",
+                "qty": 1,
+                "promised_delivery_date": "2024-05-11",
+                "item_original_cost": 65000.00,
+                "applied_discount": 0.0,
+                "item_final_cost": 65000.00,
+                "package_id": "PACKFAST0001294"
+            }
+        ],
+        "payment_method": [
+            {
+                "payment_method_id": "PMPS0098712",
+                "type": "CREDIT_CARD",
+                "amount_paid": 65000.00
+            }
+        ],
+        "associated_returns": [
+            "RET20240513"
         ]
     }
 }

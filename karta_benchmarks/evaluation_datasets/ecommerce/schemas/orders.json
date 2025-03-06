@@ -20,7 +20,11 @@
                 },
                 "payment_status": {
                     "type": "string",
-                    "enum": ["SUCCESS", "FAILED", "PENDING"],
+                    "enum": [
+                        "SUCCESS",
+                        "FAILED",
+                        "PENDING"
+                    ],
                     "description": "Status of the payment for the order."
                 },
                 "shipping_address": {
@@ -47,7 +51,11 @@
                             "description": "Phone number for delivery contact."
                         }
                     },
-                    "required": ["address_1", "pin_code", "contact_number"]
+                    "required": [
+                        "address_1",
+                        "pin_code",
+                        "contact_number"
+                    ]
                 },
                 "items_ordered": {
                     "type": "array",
@@ -85,7 +93,10 @@
                                 "description": "Unique identifier for the package. Is not present then the item has not shipped yet."
                             }
                         },
-                        "required": ["item_number", "qty"]
+                        "required": [
+                            "item_number",
+                            "qty"
+                        ]
                     }
                 },
                 "payment_method": {
@@ -99,7 +110,11 @@
                             },
                             "type": {
                                 "type": "string",
-                                "enum": ["CREDIT_CARD", "COD", "GIFT_CARD"],
+                                "enum": [
+                                    "CREDIT_CARD",
+                                    "COD",
+                                    "GIFT_CARD"
+                                ],
                                 "description": "Type of payment method used."
                             },
                             "amount_paid": {
@@ -108,11 +123,29 @@
                                 "minimum": 0
                             }
                         },
-                        "required": ["payment_method_id", "type", "amount_paid"]
+                        "required": [
+                            "payment_method_id",
+                            "type",
+                            "amount_paid"
+                        ]
                     }
                 }
             },
-            "required": ["order_id", "customer_id", "shipping_address", "items_ordered", "payment_method"]
+            "associated_returns": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "description": "Unique identifier for the return."
+                }
+            },
+            "required": [
+                "order_id",
+                "customer_id",
+                "shipping_address",
+                "items_ordered",
+                "payment_method",
+                "associated_returns"
+            ]
         }
     }
 }
