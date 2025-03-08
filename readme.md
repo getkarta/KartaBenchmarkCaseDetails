@@ -35,7 +35,7 @@ Use these in your agent testing workflow. For more details see below.
 
 | Domain     | L1 Tasks | L2 Tasks | L3 Tasks | Total Tasks |
 |------------|----------|----------|----------|-------------|
-| Ecommerce  | 1        | 1        | 1        | 3           |
+| Ecommerce  | 2        | 1        | 1        | 4       |
 
 
 ## Welcome to the Karta Context Engine

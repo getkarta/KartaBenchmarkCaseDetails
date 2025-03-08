@@ -137,5 +137,31 @@
                 "property_value": "Wireless"
             }
         ]
+    },
+    "ITM76621": {
+        "item_description": "Voltas Air Conditioner",
+        "item_weight": 75.0,
+        "item_cost": 50000.00,
+        "seller_id": "SELL1234",
+        "restricted_zip_codes": [
+            "67781",
+            "47784",
+            "98876"
+        ],
+        "item_category": "Electronics - Air Conditioners",
+        "item_specifications": [
+            {
+                "property_name": "Color",
+                "property_value": "White"
+            },
+            {
+                "property_name": "Brand",
+                "property_value": "Voltas"
+            },
+            {
+                "property_name": "Capacity",
+                "property_value": "1.5 Ton"
+            }
+        ]
     }
 }

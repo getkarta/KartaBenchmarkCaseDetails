@@ -6,4 +6,4 @@ Task Descriptions
    ../../task_descriptions/ecommerce/task1.md
    ../../task_descriptions/ecommerce/task2.md
    ../../task_descriptions/ecommerce/task3.md
-   
+   ../../task_descriptions/ecommerce/task4.md

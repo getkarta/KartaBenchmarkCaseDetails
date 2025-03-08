@@ -110,6 +110,11 @@ All the information contained in the event logs is condensed into the current st
 * **RETURN_PICKEDUP**: The package is being returned by the customer and has been picked up.
 * **RETURN_COMPLETED:** The return has been completed.
 
+## Unorderable Items
+
+Some items are not orderable for specific pin / zip codes. If a customer complains about an item being unorderable then ask the customer to check the item ID on the website and use the `get_item_details` tool to get its details. Ask the customer 
+for the shipping pin / zip code and see if the zip code is in the `restricted_zip_codes` list in the item details. If it is, then inform the customer that the item is not orderable for that zip code.
+
 ## Returns
 
 Just as packages move on a forward leg to the customer, they can also be returned by the customer. These are called RETURN packages (`type=RETURN`). They follow a slightly different route back to the warehouse. Packages are still RECEIVED and DESPATCHED but in the opposite direction. When the package has been picked up and is in transit to the delivery station its status marked as RETURN_PICKEDUP. When it finally reaches the warehouse its status become RETURN_COMPLETED. Make sure you note the package type and interpret the details accordingly. Return packages are very different from order delivery packages. They are assigned to to an return instead of an order.

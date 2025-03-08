@@ -59,5 +59,23 @@
         "active_returns": [
             "RET20240513"
         ]
+    },
+    "CUST0001006": {
+        "customer_id": "CUST0001006",
+        "is_rewards_and_benfits_member": true,
+        "first_name": "Ahmed",
+        "last_name": "Salman",
+        "email": "ahmed@example.com",
+        "phone_number": "+91 99999 23244",
+        "date_of_birth": "1960-01-01",
+        "gender": "Male",
+        "account_creation_date": "2020-01-07",
+        "last_order_date": "2024-01-01",
+        "is_active": true,
+        "is_email_verified": true,
+        "is_phone_verified": true,
+        "is_fraud_flag": false,
+        "active_orders": [],
+        "active_returns": []
     }
 }
