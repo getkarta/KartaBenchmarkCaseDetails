@@ -43,6 +43,26 @@ The **Order Table Schema** defines the structure of order records within the sys
                     ],
                     "description": "Status of the payment for the order."
                 },
+                "cancellation_date": {
+                    "type": "string",
+                    "format": "date",
+                    "description": "Date when the order was cancelled.",
+                    "nullable": true
+                },
+                "is_cancelled": {
+                    "type": "boolean",
+                    "description": "Whether the order has been cancelled.",
+                    "nullable": true
+                },
+                "refund_status": {
+                    "type": "string",
+                    "enum": [
+                        "PENDING",
+                        "SUCCESS"
+                    ],
+                    "description": "Status of the refund for the order.",
+                    "nullable": true
+                },
                 "shipping_address": {
                     "type": "object",
                     "properties": {
